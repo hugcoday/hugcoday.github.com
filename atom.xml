@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://hugcoday.github.com/atom.xml" rel="self"/>
   <link href="http://hugcoday.github.com/"/>
-  <updated>2012-09-06T20:14:16+08:00</updated>
+  <updated>2012-09-06T20:42:43+08:00</updated>
   <id>http://hugcoday.github.com/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,5 +12,142 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[helloworld]]></title>
+    <link href="http://hugcoday.github.com/blog/2012/09/06/helloworld/"/>
+    <updated>2012-09-06T20:23:00+08:00</updated>
+    <id>http://hugcoday.github.com/blog/2012/09/06/helloworld</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[new-post]]></title>
+    <link href="http://hugcoday.github.com/blog/2012/09/06/new-post/"/>
+    <updated>2012-09-06T20:22:00+08:00</updated>
+    <id>http://hugcoday.github.com/blog/2012/09/06/new-post</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[命令行环境使用phonegap开发android]]></title>
+    <link href="http://hugcoday.github.com/blog/2012/09/05/android-commend-line/"/>
+    <updated>2012-09-05T00:00:00+08:00</updated>
+    <id>http://hugcoday.github.com/blog/2012/09/05/android-commend-line</id>
+    <content type="html"><![CDATA[<h3>环境（必须）：</h3>
+
+<p><em>ant-1.82
+</em>android-tools
+<em>jdk-1.6
+</em>phonegap 2.0</p>
+
+<h3>windows环境配置如下：</h3>
+
+<p>*将android工具包下tool、planform-tool配置到系统环境变量path中</p>
+
+<p>*将jdk配置到系统环境变量中</p>
+
+<pre><code>D:\Android\android-sdk-windows\platform-tools
+D:\Android\android-sdk-windows\tools
+</code></pre>
+
+<p>*将ant配置到系统环境变量中</p>
+
+<pre><code>D:\Java\apache-ant-1.8.2\bin
+</code></pre>
+
+<p>*将phonegap配置到环境变量中</p>
+
+<pre><code>**D:\Engine\phonegap2\lib\android\bin
+</code></pre>
+
+<p>*创建项目</p>
+
+<pre><code>create e:\android\app com.syscde.app facechange 
+</code></pre>
+
+<p>*编译项目</p>
+
+<pre><code>执行e:\android\appant debug
+</code></pre>
+
+<p>*模拟运行</p>
+
+<pre><code>执行e:\android\app\caordova\emulate.bat
+</code></pre>
+
+<blockquote><p>不知道怎么回事，总是模拟不起来，只好用手机直接跑
+使用命令：ant clean debug install
+这个不用签名
+签名方式如下：</p>
+
+<pre><code>ant clean release 
+创建签名
+keytool -genkey -v -keystore facechange.keystore -alias release -keyalg RSA -keysize 2048 -validity 10000
+给apk 签名
+jarsigner -keystore facechange.keystore -digestalg SHA1 -sigalg MD5withRSA bin/facechange-release-unsigned.apk release
+</code></pre></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[notepad++ markdown插件安装]]></title>
+    <link href="http://hugcoday.github.com/blog/2012/08/31/notepad%2B%2B-markdown-plugin/"/>
+    <updated>2012-08-31T00:00:00+08:00</updated>
+    <id>http://hugcoday.github.com/blog/2012/08/31/notepad++-markdown-plugin</id>
+    <content type="html"><![CDATA[<p>Notepad++ 是一款非常友好的编辑器，轻巧、便捷、高效、插件丰富…
+同时 Notepad++ 支持用户自定义语法高亮
+GitHub上已经有人编写好开源的 Markdown 规则： https://github.com/thomsmits/markdown_npp</p>
+
+<p>一、让Notepad++ 高亮支持 Markdown 语法:</p>
+
+<pre><code>开始菜单 -&gt; 运行 (或者直接按 Ctrl + R) -&gt; 输入 %APPDATA%\Notepad++
+将 userDefineLang.xml 放置到此目录
+重启 Notepad++，在语言菜单下可以看到自定义的 Markdown 高亮规则
+
+转载：写代码 ? Notepad++ 加入 Markdown 支持
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JAVA 开源报表]]></title>
+    <link href="http://hugcoday.github.com/blog/2012/08/31/Java-report/"/>
+    <updated>2012-08-31T00:00:00+08:00</updated>
+    <id>http://hugcoday.github.com/blog/2012/08/31/Java-report</id>
+    <content type="html"><![CDATA[<h2></h2>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[git保存密码的方法]]></title>
+    <link href="http://hugcoday.github.com/blog/2012/08/24/git-save-password/"/>
+    <updated>2012-08-24T00:00:00+08:00</updated>
+    <id>http://hugcoday.github.com/blog/2012/08/24/git-save-password</id>
+    <content type="html"><![CDATA[<p>Included file &#8216;JB/setup&#8217; not found in _includes directory</p>
+
+<h2>windows7 配置如下：</h2>
+
+<p>*创建_netrc文件，内容为</p>
+
+<blockquote><p>machine your.server.com</p>
+
+<p>login your-username</p>
+
+<p>password your-password</p></blockquote>
+
+<p>*创建run.bat，内容为：</p>
+
+<blockquote><p>setx HOME %USERPROFILE%</p>
+
+<p>copy _netrc %USERPROFILE%</p>
+
+<p>pause</p></blockquote>
+
+<p>*两个文件放到同一目录下，执行run.bat即可。</p>
+]]></content>
+  </entry>
   
 </feed>

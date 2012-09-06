@@ -4,7 +4,7 @@
   <title><![CDATA[多多de棉花糖]]></title>
   <link href="http://hugcoday.github.com/atom.xml" rel="self"/>
   <link href="http://hugcoday.github.com/"/>
-  <updated>2012-09-06T20:47:36+08:00</updated>
+  <updated>2012-09-06T21:05:29+08:00</updated>
   <id>http://hugcoday.github.com/</id>
   <author>
     <name><![CDATA[周迪]]></name>
@@ -14,20 +14,33 @@
 
   
   <entry>
-    <title type="html"><![CDATA[helloworld]]></title>
-    <link href="http://hugcoday.github.com/blog/2012/09/06/helloworld/"/>
-    <updated>2012-09-06T20:23:00+08:00</updated>
-    <id>http://hugcoday.github.com/blog/2012/09/06/helloworld</id>
-    <content type="html"><![CDATA[
+    <title type="html"><![CDATA[关于octopress中文乱码]]></title>
+    <link href="http://hugcoday.github.com/blog/2012/09/06/about-octopress/"/>
+    <updated>2012-09-06T21:02:00+08:00</updated>
+    <id>http://hugcoday.github.com/blog/2012/09/06/about-octopress</id>
+    <content type="html"><![CDATA[<p>修改文件convertible.rb
+文件路径：E:\engine\Ruby193\lib\ruby\gems\1.9.1\gems\jekyll-0.11.2\lib\jekyll
+27行
+def read_yaml(base, name)</p>
+
+<pre><code>  self.content = File.read(File.join(base, name))
+</code></pre>
+
+<p>增加, :encoding => &#8220;utf-8&#8221;</p>
+
+<p>def read_yaml(base, name)</p>
+
+<pre><code>  self.content = File.read(File.join(base, name), :encoding =&gt; "utf-8")
+</code></pre>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[new-post]]></title>
-    <link href="http://hugcoday.github.com/blog/2012/09/06/new-post/"/>
-    <updated>2012-09-06T20:22:00+08:00</updated>
-    <id>http://hugcoday.github.com/blog/2012/09/06/new-post</id>
-    <content type="html"><![CDATA[
+    <title type="html"><![CDATA[helloworld]]></title>
+    <link href="http://hugcoday.github.com/blog/2012/09/06/helloworld/"/>
+    <updated>2012-09-06T20:23:00+08:00</updated>
+    <id>http://hugcoday.github.com/blog/2012/09/06/helloworld</id>
+    <content type="html"><![CDATA[<h2>你好，jekyll and octopress</h2>
 ]]></content>
   </entry>
   

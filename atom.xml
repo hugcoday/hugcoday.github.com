@@ -4,7 +4,7 @@
   <title><![CDATA[多多de棉花糖]]></title>
   <link href="http://hugcoday.github.com/atom.xml" rel="self"/>
   <link href="http://hugcoday.github.com/"/>
-  <updated>2012-09-06T21:05:29+08:00</updated>
+  <updated>2012-09-07T20:42:26+08:00</updated>
   <id>http://hugcoday.github.com/</id>
   <author>
     <name><![CDATA[周迪]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[我和我的多多]]></title>
+    <link href="http://hugcoday.github.com/blog/2012/09/07/mybaby/"/>
+    <updated>2012-09-07T20:20:00+08:00</updated>
+    <id>http://hugcoday.github.com/blog/2012/09/07/mybaby</id>
+    <content type="html"><![CDATA[<h2>我的多多</h2>
+
+<p><img src="assets/images/mybaby.jpg" alt="mybaby" /></p>
+
+<h2>我小时候</h2>
+
+<p><img src="assets/images/me.jpg" alt="me" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[android-phonegap开发日记]]></title>
+    <link href="http://hugcoday.github.com/blog/2012/09/06/anroid-diary/"/>
+    <updated>2012-09-06T21:13:00+08:00</updated>
+    <id>http://hugcoday.github.com/blog/2012/09/06/anroid-diary</id>
+    <content type="html"><![CDATA[<h2>启动慢，黑屏处理方式</h2>
+
+<p>super.setIntegerProperty(&#8220;splashscreen&#8221;, R.drawable.splash);
+super.loadUrl(&#8220;file:///android_asset/www/index.html&#8221;, 5000);</p>
+
+<p>然后在res目录下的几个drawable目录下放splash.png图片即可</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[关于octopress中文乱码]]></title>

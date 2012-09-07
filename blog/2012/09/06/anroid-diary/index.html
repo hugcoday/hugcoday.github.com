@@ -9,8 +9,8 @@
   <meta name="author" content="周迪">
 
   
-  <meta name="description" content="启动慢，黑屏处理方式 super.setIntegerProperty(&#8220;splashscreen&#8221;, R.drawable.splash);
-super.loadUrl(&#8220;file:///android_asset/www/index.html&#8221 &hellip;">
+  <meta name="description" content="启动慢，黑屏处理方式 super.setIntegerProperty("splashscreen", R.drawable.splash);
+super.loadUrl("file:///android_asset/www/index.html", 5000); &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -105,8 +105,9 @@ super.loadUrl(&#8220;file:///android_asset/www/index.html&#8221 &hellip;">
 
 <div class="entry-content"><h2>启动慢，黑屏处理方式</h2>
 
-<p>super.setIntegerProperty(&#8220;splashscreen&#8221;, R.drawable.splash);
-super.loadUrl(&#8220;file:///android_asset/www/index.html&#8221;, 5000);</p>
+<pre><code>super.setIntegerProperty("splashscreen", R.drawable.splash);
+super.loadUrl("file:///android_asset/www/index.html", 5000);
+</code></pre>
 
 <p>然后在res目录下的几个drawable目录下放splash.png图片即可</p>
 </div>

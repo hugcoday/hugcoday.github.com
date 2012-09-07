@@ -9,7 +9,10 @@
   <meta name="author" content="周迪">
 
   
-  <meta name="description" content="windows7 配置如下： *创建_netrc文件，内容为 machine your.server.com login your-username password your-password *创建run.bat，内容为： setx HOME %USERPROFILE% copy _netrc &hellip;">
+  <meta name="description" content="windows7 配置如下： 创建_netrc文件，内容为 machine your.server.com
+login your-username
+password your-password 创建run.bat，内容为： setx HOME %USERPROFILE%
+copy _netrc % &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -104,23 +107,21 @@
 
 <div class="entry-content"><h2>windows7 配置如下：</h2>
 
-<p>*创建_netrc文件，内容为</p>
+<p>创建_netrc文件，内容为</p>
 
-<blockquote><p>machine your.server.com</p>
+<pre><code>machine your.server.com
+login your-username
+password your-password
+</code></pre>
 
-<p>login your-username</p>
+<p>创建run.bat，内容为：</p>
 
-<p>password your-password</p></blockquote>
+<pre><code>setx HOME %USERPROFILE%
+copy _netrc %USERPROFILE%
+pause
+</code></pre>
 
-<p>*创建run.bat，内容为：</p>
-
-<blockquote><p>setx HOME %USERPROFILE%</p>
-
-<p>copy _netrc %USERPROFILE%</p>
-
-<p>pause</p></blockquote>
-
-<p>*两个文件放到同一目录下，执行run.bat即可。</p>
+<p>两个文件放到同一目录下，执行run.bat即可。</p>
 </div>
 
 

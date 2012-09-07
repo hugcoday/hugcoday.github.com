@@ -11,8 +11,7 @@
   
   <meta name="description" content="修改文件convertible.rb
 文件路径：E:\engine\Ruby193\lib\ruby\gems\1.9.1\gems\jekyll-0.11.2\lib\jekyll
-27行
-def read_yaml(base, name) self.content = File.read( &hellip;">
+27行 def read_yaml(base, name) self.content = File.read( &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -107,18 +106,19 @@ def read_yaml(base, name) self.content = File.read( &hellip;">
 
 <div class="entry-content"><p>修改文件convertible.rb
 文件路径：E:\engine\Ruby193\lib\ruby\gems\1.9.1\gems\jekyll-0.11.2\lib\jekyll
-27行
-def read_yaml(base, name)</p>
+27行</p>
 
-<pre><code>  self.content = File.read(File.join(base, name))
+<pre><code>def read_yaml(base, name)
+  self.content = File.read(File.join(base, name))
 </code></pre>
 
 <p>增加, :encoding => &#8220;utf-8&#8221;</p>
 
-<p>def read_yaml(base, name)</p>
-
-<pre><code>  self.content = File.read(File.join(base, name), :encoding =&gt; "utf-8")
+<pre><code>def read_yaml(base, name)
+  self.content = File.read(File.join(base, name), :encoding =&gt; "utf-8")
 </code></pre>
+
+<p>另外，写文章的时候，编码格式一定是<strong>UTF-8无BOM</strong>格式编码，其他编码会异常。</p>
 </div>
 
 

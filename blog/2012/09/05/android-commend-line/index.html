@@ -12,7 +12,7 @@
   <meta name="description" content="环境（必须）： ant-1.82
 android-tools
 jdk-1.6
-phonegap 2.0 windows环境配置如下： *将android工具包下tool、planform-tool配置到系统环境变量path中 *将jdk配置到系统环境变量中 D:\Android\android- &hellip;">
+phonegap 2.0 windows环境配置如下： 将android工具包下tool、planform-tool配置到系统环境变量path中 将jdk配置到系统环境变量中 D:\Android\android-sdk &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -107,57 +107,68 @@ phonegap 2.0 windows环境配置如下： *将android工具包下tool、planform
 
 <div class="entry-content"><h3>环境（必须）：</h3>
 
-<p><em>ant-1.82
-</em>android-tools
-<em>jdk-1.6
-</em>phonegap 2.0</p>
+<pre><code>ant-1.82
+android-tools
+jdk-1.6
+phonegap 2.0
+</code></pre>
 
 <h3>windows环境配置如下：</h3>
 
-<p>*将android工具包下tool、planform-tool配置到系统环境变量path中</p>
+<p>将android工具包下tool、planform-tool配置到系统环境变量path中</p>
 
-<p>*将jdk配置到系统环境变量中</p>
+<p>将jdk配置到系统环境变量中</p>
 
 <pre><code>D:\Android\android-sdk-windows\platform-tools
 D:\Android\android-sdk-windows\tools
 </code></pre>
 
-<p>*将ant配置到系统环境变量中</p>
+<p>将ant配置到系统环境变量中</p>
 
 <pre><code>D:\Java\apache-ant-1.8.2\bin
 </code></pre>
 
-<p>*将phonegap配置到环境变量中</p>
+<p>将phonegap配置到环境变量中</p>
 
-<pre><code>**D:\Engine\phonegap2\lib\android\bin
+<pre><code>D:\Engine\phonegap2\lib\android\bin
 </code></pre>
 
-<p>*创建项目</p>
+<p>创建项目</p>
 
 <pre><code>create e:\android\app com.syscde.app facechange 
 </code></pre>
 
-<p>*编译项目</p>
+<p>编译项目</p>
 
-<pre><code>执行e:\android\appant debug
+<pre><code>执行e:\android\app\ant debug
 </code></pre>
 
-<p>*模拟运行</p>
+<p>模拟运行</p>
 
 <pre><code>执行e:\android\app\caordova\emulate.bat
 </code></pre>
 
-<blockquote><p>不知道怎么回事，总是模拟不起来，只好用手机直接跑
-使用命令：ant clean debug install
-这个不用签名
+<p>不知道怎么回事，总是模拟不起来，只好用手机直接跑
+使用命令：</p>
+
+<pre><code>ant clean debug install
+</code></pre>
+
+<p>这个不用签名
 签名方式如下：</p>
 
 <pre><code>ant clean release 
-创建签名
-keytool -genkey -v -keystore facechange.keystore -alias release -keyalg RSA -keysize 2048 -validity 10000
-给apk 签名
-jarsigner -keystore facechange.keystore -digestalg SHA1 -sigalg MD5withRSA bin/facechange-release-unsigned.apk release
-</code></pre></blockquote>
+</code></pre>
+
+<p>创建签名</p>
+
+<pre><code>keytool -genkey -v -keystore facechange.keystore -alias release -keyalg RSA -keysize 2048 -validity 10000
+</code></pre>
+
+<p>给apk 签名</p>
+
+<pre><code>jarsigner -keystore facechange.keystore -digestalg SHA1 -sigalg MD5withRSA bin/facechange-release-unsigned.apk release
+</code></pre>
 </div>
 
 

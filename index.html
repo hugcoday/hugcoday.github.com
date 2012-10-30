@@ -9,7 +9,8 @@
   <meta name="author" content="周迪">
 
   
-  <meta name="description" content="我的多多 我小时候 ">
+  <meta name="description" content="
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,6 +83,175 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/10/30/zhouqi/">元素周期表记忆法</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-30T09:23:00+08:00" pubdate data-updated="true">Oct 30<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/10/30/zhouqi/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="assets/images/zhouqi.jpg" alt="元素周期表记忆法" /></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/15/flex-mouse-png/">Flex 鼠标手势</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-15T15:37:00+08:00" pubdate data-updated="true">Oct 15<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/10/15/flex-mouse-png/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Flex鼠标手势、自定义光标</p>
+
+<p>一、直接用默认的API</p>
+
+<pre><code>CursorManager.setBusyCursor();//鼠标变成小钟
+CursorManager.removeBusyCursor();//由小钟恢复成箭头
+</code></pre>
+
+<p>如果是继承自Sprite的组件，可以使用useHandCursor属性控制鼠标是手型还是箭头(一般像按钮那样直接设置这个属性就可以了)；</p>
+
+<p>二、使用 JPEG、GIF、PNG 或 SVG 图像、Sprite 对象或者 SWF 文件来作为光标图像。</p>
+
+<pre><code>[Embed(source="ClickHand.gif")]
+public var clickHand:Class;//图标
+var cursorID:Number = CursorManager.setCursor(clickHand);//更改鼠标图标
+CursorManager.removeCursor(cursorID);//还原鼠标图标
+</code></pre>
+
+<p>三、用自定义类显示光标，下面的例子讲光标设为一个圆(具体参考)
+例如：</p>
+
+<pre><code>package com{
+import flash.display.Sprite;
+publicclass Ellipseextends Sprite
+{publicfunction Ellipse()
+{
+this.graphics.lineStyle( 1 , 0x000000 , 1 );
+this.graphics.drawEllipse( 0 , 0 , 50 , 10 );
+super();
+}
+}
+}
+</code></pre>
+
+<p>//在需要改变的地方加上：</p>
+
+<pre><code>CursorManager.setCursor(Ellipse);
+</code></pre>
+
+<p>简单的鼠标手型 增加属性</p>
+
+<pre><code>buttonMode="true" useHandCursor="true"
+</code></pre>
+
+<p>总结：改变鼠标手势的方式有很多种，可以根据实际需求来选择，有些时候可能需要交互，比如需要根据用户输入的参数来显示光标的大小和颜色，这个自己发挥吧。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/09/phonegap-not-orientation/">Phonegap小技巧</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-09T15:37:00+08:00" pubdate data-updated="true">Sep 9<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/09/09/phonegap-not-orientation/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>phonegap禁止屏幕旋转</h2>
+
+<p>在AndroidManifest.xml中增加android:screenOrientation=&#8221;landscape&#8221;,如：</p>
+
+<pre><code>&lt;activity android:name="faceturn" android:label="@string/app_name" 
+    android:configChanges="orientation|keyboardHidden"
+    android:screenOrientation="landscape"&gt;
+</code></pre>
+
+<p>landscape是横向，portrait是纵向</p>
+
+<h2>phonegap全屏展示</h2>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/09/07/mybaby/">我和我的多多</a></h1>
     
     
@@ -99,6 +269,8 @@
 
 
 <time datetime="2012-09-07T20:20:00+08:00" pubdate data-updated="true">Sep 7<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/09/07/mybaby/#disqus_thread">Comments</a>
         
       </p>
     
@@ -142,6 +314,8 @@
 
 <time datetime="2012-09-06T21:13:00+08:00" pubdate data-updated="true">Sep 6<span>th</span>, 2012</time>
         
+         | <a href="/blog/2012/09/06/anroid-diary/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -183,6 +357,8 @@ super.loadUrl("file:///android_asset/www/index.html", 5000);
 
 
 <time datetime="2012-09-06T21:02:00+08:00" pubdate data-updated="true">Sep 6<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/09/06/about-octopress/#disqus_thread">Comments</a>
         
       </p>
     
@@ -234,6 +410,8 @@ super.loadUrl("file:///android_asset/www/index.html", 5000);
 
 <time datetime="2012-09-06T20:23:00+08:00" pubdate data-updated="true">Sep 6<span>th</span>, 2012</time>
         
+         | <a href="/blog/2012/09/06/helloworld/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -269,6 +447,8 @@ super.loadUrl("file:///android_asset/www/index.html", 5000);
 
 
 <time datetime="2012-09-05T00:00:00+08:00" pubdate data-updated="true">Sep 5<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/09/05/android-commend-line/#disqus_thread">Comments</a>
         
       </p>
     
@@ -369,6 +549,8 @@ D:\Android\android-sdk-windows\tools
 
 <time datetime="2012-08-31T00:00:00+08:00" pubdate data-updated="true">Aug 31<span>st</span>, 2012</time>
         
+         | <a href="/blog/2012/08/31/notepad%2B%2B-markdown-plugin/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -416,6 +598,8 @@ GitHub上已经有人编写好开源的 Markdown 规则： https://github.com/th
 
 <time datetime="2012-08-31T00:00:00+08:00" pubdate data-updated="true">Aug 31<span>st</span>, 2012</time>
         
+         | <a href="/blog/2012/08/31/Java-report/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -429,59 +613,9 @@ GitHub上已经有人编写好开源的 Markdown 规则： https://github.com/th
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/08/24/git-save-password/">Git保存密码的方法</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-24T00:00:00+08:00" pubdate data-updated="true">Aug 24<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>windows7 配置如下：</h2>
-
-<p>创建_netrc文件，内容为</p>
-
-<pre><code>machine your.server.com
-login your-username
-password your-password
-</code></pre>
-
-<p>创建run.bat，内容为：</p>
-
-<pre><code>setx HOME %USERPROFILE%
-copy _netrc %USERPROFILE%
-pause
-</code></pre>
-
-<p>两个文件放到同一目录下，执行run.bat即可。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -494,23 +628,23 @@ pause
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/10/30/zhouqi/">元素周期表记忆法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/15/flex-mouse-png/">Flex 鼠标手势</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/09/phonegap-not-orientation/">phonegap小技巧</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/09/07/mybaby/">我和我的多多</a>
       </li>
     
       <li class="post">
         <a href="/blog/2012/09/06/anroid-diary/">android-phonegap开发日记</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/09/06/about-octopress/">关于octopress中文乱码</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/09/06/helloworld/">helloworld</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/09/05/android-commend-line/">命令行环境使用phonegap开发android</a>
       </li>
     
   </ul>
@@ -544,7 +678,6 @@ pause
   </script>
   <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
-
 
 
 <section>
@@ -588,16 +721,6 @@ pause
 
 
 
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

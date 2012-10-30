@@ -5,13 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>关于octopress中文乱码 - 多多de棉花糖</title>
+  <title>Flex 鼠标手势 - 多多de棉花糖</title>
   <meta name="author" content="周迪">
 
   
-  <meta name="description" content="修改文件convertible.rb
-文件路径：E:\engine\Ruby193\lib\ruby\gems\1.9.1\gems\jekyll-0.11.2\lib\jekyll
-27行 def read_yaml(base, name) self.content = File.read( &hellip;">
+  <meta name="description" content="Flex鼠标手势、自定义光标 一、直接用默认的API CursorManager.setBusyCursor();//鼠标变成小钟
+CursorManager.removeBusyCursor();//由小钟恢复成箭头 如果是继承自Sprite的组件， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://hugcoday.github.com/blog/2012/09/06/about-octopress/">
+  <link rel="canonical" href="http://hugcoday.github.com/blog/2012/10/15/flex-mouse-png/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -81,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">关于octopress中文乱码</h1>
+      <h1 class="entry-title">Flex 鼠标手势</h1>
     
     
       <p class="meta">
@@ -97,7 +96,7 @@
   
 
 
-<time datetime="2012-09-06T21:02:00+08:00" pubdate data-updated="true">Sep 6<span>th</span>, 2012</time>
+<time datetime="2012-10-15T15:37:00+08:00" pubdate data-updated="true">Oct 15<span>th</span>, 2012</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -106,21 +105,51 @@
   </header>
 
 
-<div class="entry-content"><p>修改文件convertible.rb
-文件路径：E:\engine\Ruby193\lib\ruby\gems\1.9.1\gems\jekyll-0.11.2\lib\jekyll
-27行</p>
+<div class="entry-content"><p>Flex鼠标手势、自定义光标</p>
 
-<pre><code>def read_yaml(base, name)
-  self.content = File.read(File.join(base, name))
+<p>一、直接用默认的API</p>
+
+<pre><code>CursorManager.setBusyCursor();//鼠标变成小钟
+CursorManager.removeBusyCursor();//由小钟恢复成箭头
 </code></pre>
 
-<p>增加, :encoding => &#8220;utf-8&#8221;</p>
+<p>如果是继承自Sprite的组件，可以使用useHandCursor属性控制鼠标是手型还是箭头(一般像按钮那样直接设置这个属性就可以了)；</p>
 
-<pre><code>def read_yaml(base, name)
-  self.content = File.read(File.join(base, name), :encoding =&gt; "utf-8")
+<p>二、使用 JPEG、GIF、PNG 或 SVG 图像、Sprite 对象或者 SWF 文件来作为光标图像。</p>
+
+<pre><code>[Embed(source="ClickHand.gif")]
+public var clickHand:Class;//图标
+var cursorID:Number = CursorManager.setCursor(clickHand);//更改鼠标图标
+CursorManager.removeCursor(cursorID);//还原鼠标图标
 </code></pre>
 
-<p>另外，写文章的时候，编码格式一定是<strong>UTF-8无BOM</strong>格式编码，其他编码会异常。</p>
+<p>三、用自定义类显示光标，下面的例子讲光标设为一个圆(具体参考)
+例如：</p>
+
+<pre><code>package com{
+import flash.display.Sprite;
+publicclass Ellipseextends Sprite
+{publicfunction Ellipse()
+{
+this.graphics.lineStyle( 1 , 0x000000 , 1 );
+this.graphics.drawEllipse( 0 , 0 , 50 , 10 );
+super();
+}
+}
+}
+</code></pre>
+
+<p>//在需要改变的地方加上：</p>
+
+<pre><code>CursorManager.setCursor(Ellipse);
+</code></pre>
+
+<p>简单的鼠标手型 增加属性</p>
+
+<pre><code>buttonMode="true" useHandCursor="true"
+</code></pre>
+
+<p>总结：改变鼠标手势的方式有很多种，可以根据实际需求来选择，有些时候可能需要交互，比如需要根据用户输入的参数来显示光标的大小和颜色，这个自己发挥吧。</p>
 </div>
 
 
@@ -143,7 +172,7 @@
   
 
 
-<time datetime="2012-09-06T21:02:00+08:00" pubdate data-updated="true">Sep 6<span>th</span>, 2012</time>
+<time datetime="2012-10-15T15:37:00+08:00" pubdate data-updated="true">Oct 15<span>th</span>, 2012</time>
       
 
 
@@ -158,10 +187,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/09/06/helloworld/" title="Previous Post: helloworld">&laquo; helloworld</a>
+        <a class="basic-alignment left" href="/blog/2012/09/09/phonegap-not-orientation/" title="Previous Post: phonegap小技巧">&laquo; phonegap小技巧</a>
       
       
-        <a class="basic-alignment right" href="/blog/2012/09/06/anroid-diary/" title="Next Post: android-phonegap开发日记">android-phonegap开发日记 &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2012/10/30/zhouqi/" title="Next Post: 元素周期表记忆法">元素周期表记忆法 &raquo;</a>
       
     </p>
   </footer>
@@ -263,8 +292,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://hugcoday.github.com/blog/2012/09/06/about-octopress/';
-        var disqus_url = 'http://hugcoday.github.com/blog/2012/09/06/about-octopress/';
+        var disqus_identifier = 'http://hugcoday.github.com/blog/2012/10/15/flex-mouse-png/';
+        var disqus_url = 'http://hugcoday.github.com/blog/2012/10/15/flex-mouse-png/';
         var disqus_script = 'embed.js';
       
     (function () {

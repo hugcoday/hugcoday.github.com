@@ -5,13 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>关于octopress中文乱码 - 多多de棉花糖</title>
+  <title>多多de棉花糖</title>
   <meta name="author" content="周迪">
 
   
-  <meta name="description" content="修改文件convertible.rb
-文件路径：E:\engine\Ruby193\lib\ruby\gems\1.9.1\gems\jekyll-0.11.2\lib\jekyll
-27行 def read_yaml(base, name) self.content = File.read( &hellip;">
+  <meta name="description" content="windows7 配置如下： 创建_netrc文件，内容为 machine your.server.com
+login your-username
+password your-password 创建run.bat，内容为： setx HOME %USERPROFILE%
+copy _netrc % &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://hugcoday.github.com/blog/2012/09/06/about-octopress/">
+  <link rel="canonical" href="http://hugcoday.github.com/blog/page/2/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -76,12 +77,15 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div>
-<article class="hentry" role="article">
+      <div class="blog-index">
   
+  
+  
+    <article>
+      
   <header>
     
-      <h1 class="entry-title">关于octopress中文乱码</h1>
+      <h1 class="entry-title"><a href="/blog/2012/08/24/git-save-password/">Git保存密码的方法</a></h1>
     
     
       <p class="meta">
@@ -97,84 +101,47 @@
   
 
 
-<time datetime="2012-09-06T21:02:00+08:00" pubdate data-updated="true">Sep 6<span>th</span>, 2012</time>
+<time datetime="2012-08-24T00:00:00+08:00" pubdate data-updated="true">Aug 24<span>th</span>, 2012</time>
         
-         | <a href="#disqus_thread">Comments</a>
+         | <a href="/blog/2012/08/24/git-save-password/#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>修改文件convertible.rb
-文件路径：E:\engine\Ruby193\lib\ruby\gems\1.9.1\gems\jekyll-0.11.2\lib\jekyll
-27行</p>
+  <div class="entry-content"><h2>windows7 配置如下：</h2>
 
-<pre><code>def read_yaml(base, name)
-  self.content = File.read(File.join(base, name))
+<p>创建_netrc文件，内容为</p>
+
+<pre><code>machine your.server.com
+login your-username
+password your-password
 </code></pre>
 
-<p>增加, :encoding => &#8220;utf-8&#8221;</p>
+<p>创建run.bat，内容为：</p>
 
-<pre><code>def read_yaml(base, name)
-  self.content = File.read(File.join(base, name), :encoding =&gt; "utf-8")
+<pre><code>setx HOME %USERPROFILE%
+copy _netrc %USERPROFILE%
+pause
 </code></pre>
 
-<p>另外，写文章的时候，编码格式一定是<strong>UTF-8无BOM</strong>格式编码，其他编码会异常。</p>
+<p>两个文件放到同一目录下，执行run.bat即可。</p>
 </div>
-
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">周迪</span></span>
-
-      
-
-
-
-
-
-
-
-
   
 
 
-<time datetime="2012-09-06T21:02:00+08:00" pubdate data-updated="true">Sep 6<span>th</span>, 2012</time>
-      
-
-
-    </p>
+    </article>
+  
+  <div class="pagination">
     
-      <div class="sharing">
-  
-  
-  
-</div>
-
+    <a href="/blog/archives">Blog Archives</a>
     
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2012/09/06/helloworld/" title="Previous Post: helloworld">&laquo; helloworld</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2012/09/06/anroid-diary/" title="Next Post: android-phonegap开发日记">android-phonegap开发日记 &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a class="next" href="/">Newer &rarr;</a>
+    
+  </div>
 </div>
-  </section>
-
-</div>
-
 <aside class="sidebar">
   
     <section>
@@ -207,7 +174,7 @@
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
+    <li class="loading">Status updating&#8230;</li>
   </ul>
   
   <a href="https://github.com/hugcoday">@hugcoday</a> on GitHub
@@ -247,7 +214,6 @@
   
 </aside>
 
-
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -262,10 +228,7 @@
       var disqus_shortname = 'hugcoday';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://hugcoday.github.com/blog/2012/09/06/about-octopress/';
-        var disqus_url = 'http://hugcoday.github.com/blog/2012/09/06/about-octopress/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

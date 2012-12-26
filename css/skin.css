@@ -1,0 +1,14 @@
+.navbar .navbar-inner { background-color: #5198BF; background-image: none; filter: none; }
+.navbar .nav > li > a { color: #eee; text-shadow: none; }
+.navbar .nav .active > a,
+.navbar .nav .active > a:hover,
+.navbar .nav > li > a:hover { background-color: #4480A1; }
+.well { background-color: #DAF1FD; border: none; color: #0078B6; }
+.nav-list > li > a,
+.nav-list .nav-header { text-shadow: none; }
+.sidebar-nav { padding: 0; }
+.nav .nav-header { background-color: #AFD7F0; color: #0078B6; }
+
+
+
+

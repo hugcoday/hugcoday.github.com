@@ -1,14 +1,63 @@
-.navbar .navbar-inner { background-color: #5198BF; background-image: none; filter: none; }
+.navbar .navbar-inner {  background-image: none; filter: none; }
 .navbar .nav > li > a { color: #eee; text-shadow: none; }
 .navbar .nav .active > a,
 .navbar .nav .active > a:hover,
 .navbar .nav > li > a:hover { background-color: #4480A1; }
-.well { background-color: #DAF1FD; border: none; color: #0078B6; }
+
+.well {  border: 1px; color: #0078B6; }
 .nav-list > li > a,
-.nav-list .nav-header { text-shadow: none; }
+.nav-list .nav-header { text-shadow: none;top: 10px;}
 .sidebar-nav { padding: 0; }
-.nav .nav-header { background-color: #AFD7F0; color: #0078B6; }
+.nav .nav-header {   color: #0; }
 
 
+body { padding-bottom: 40px; padding-top: 60px; }
 
 
+.heading,body>header h1,h1,h2,h3,h4,h5,h6 {
+	font-family:"PT Serif","Georgia","Helvetica Neue",Arial,sans-serif
+}
+.sans,body>header h2,article header p.meta,article>footer,#content .blog-index footer,html .gist .gist-file .gist-meta,#blog-archives a.category,#blog-archives time,aside.sidebar section,body>footer {
+	font-family:"PT Sans","Helvetica Neue",Arial,sans-serif
+}
+.serif,body,#content .blog-index a[rel=full-article] {
+	font-family:"PT Serif",Georgia,Times,"Times New Roman",serif
+}
+.mono,pre,code,tt,p code,li code {
+	font-family:Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace
+}
+body>header h1 {
+	font-size:2.2em;
+	font-family:"PT Serif","Georgia","Helvetica Neue",Arial,sans-serif;
+	font-weight:normal;
+	line-height:1.2em;
+	margin-bottom:0.6667em
+}
+body>header h2 {
+	font-family:"PT Serif","Georgia","Helvetica Neue",Arial,sans-serif
+}
+
+h1 {
+	font-size:2.6em;
+	line-height:1.2em
+}
+}h1,h2,h3,h4,h5,h6 {
+	text-rendering:optimizelegibility;
+	margin-bottom:1em;
+	font-weight:bold
+}
+h2,section h1 {
+	font-size:1.5em
+}
+h3,section h2,section section h1 {
+	font-size:1.3em
+}
+h4,section h3,section section h2,section section section h1 {
+	font-size:1em
+}
+h5,section h4,section section h3 {
+	font-size:.9em
+}
+h6,section h5,section section h4,section section section h3 {
+	font-size:.8em
+}

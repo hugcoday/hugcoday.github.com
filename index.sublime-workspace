@@ -1,0 +1,326 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/D/TOOLS/开发工具/del svn.reg",
+			"settings":
+			{
+				"buffer_size": 328,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/backbone-min.js",
+			"settings":
+			{
+				"buffer_size": 19909,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 81.0,
+		"selected_items":
+		[
+			[
+				"form",
+				"Format: Javascript"
+			],
+			[
+				"plis",
+				"Package Control: List Packages"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"for",
+				"Format: Javascript"
+			],
+			[
+				"frm",
+				"Format: Javascript"
+			],
+			[
+				"ssm",
+				"Set Syntax: Markdown"
+			],
+			[
+				"markd",
+				"Markdown Preview: preview in Sublime Text"
+			],
+			[
+				"Snippet: ",
+				"Snippet: html"
+			],
+			[
+				"plist",
+				"Package Control: List Packages"
+			],
+			[
+				"pin",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"pack",
+				"Package Control: Add Repository"
+			],
+			[
+				"set",
+				"Set Syntax: Markdown"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"intall",
+				"Package Control: Install Package"
+			],
+			[
+				"intal",
+				"Package Control: Install Package"
+			],
+			[
+				"inta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 416.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/TOOLS/Portable/Sublime Text 2.0.1/ext.txt",
+		"/D/TOOLS/Portable/Sublime Text 2.0.1/ST2 便携版工具包.exe",
+		"/D/TOOLS/Portable/Sublime Text 2.0.1/_ssl.pyd",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/js/meta.js",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/index.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-09-07-mybaby.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-08-24-git-save-password.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-12-26-test.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/css/skin.css",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-09-06-about-octopress.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-09-05-android-commend-line.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-08-31-notepad++-markdown-plugin.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-09-09-phonegap-not-orientation.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-10-15-flex-mouse-png.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-10-30-zhouqi.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-11-05-miui-theme.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-12-26-HELLO-WORLD.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/css/bootstrap.min.css",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/index.html",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/js/main.js",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/js/mustache.min.js",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/css/1.css",
+		"/F/DI.ZHOU/post/2012-09-06-about-octopress.md",
+		"/F/DI.ZHOU/post/2012-09-06-anroid-diary.md",
+		"/F/DI.ZHOU/post/2012-09-07-mybaby.md",
+		"/F/DI.ZHOU/post/2012-09-09-phonegap-not-orientation.md",
+		"/F/DI.ZHOU/js/main.js",
+		"/F/DI.ZHOU/js/showdown-min.js",
+		"/F/DI.ZHOU/js/underscore-min.js",
+		"/F/DI.ZHOU/js/backbone-min.js",
+		"/F/DI.ZHOU/js/bootstrap.min.js",
+		"/F/DI.ZHOU/js/jquery.min.js",
+		"/F/DI.ZHOU/post/2012-08-24-git-save-password.md",
+		"/F/DI.ZHOU/post/2012-08-31-notepad++-markdown-plugin.md",
+		"/F/DI.ZHOU/post/2012-09-05-android-commend-line.md",
+		"/F/DI.ZHOU/post/2012-09-06-helloworld.md",
+		"/F/DI.ZHOU/post/2012-10-15-flex-mouse-png.md",
+		"/F/DI.ZHOU/post/2012-10-30-zhouqi.md",
+		"/F/DI.ZHOU/post/2012-11-05-miui-theme.md",
+		"/F/DI.ZHOU/post/2012-12-26-HELLO-WORLD.md",
+		"/F/DI.ZHOU/HELLO WORLD.md",
+		"/D/TOOLS/Portable/Sublime Text 2.0.1/Data/Packages/SmartMarkdown/SmartMarkdown.sublime-settings",
+		"/E/TDDOWNLOAD/JQuery zTree v3.5/demo/cn/super/left_menu.html",
+		"/C/Users/di.zhou/Desktop/1.md",
+		"/D/TOOLS/Portable/Sublime Text 2.0.1/Data/Packages/Default/Preferences.sublime-settings",
+		"/D/TOOLS/Portable/Sublime Text 2.0.1/Data/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"render",
+			"post"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/D/TOOLS/开发工具/del svn.reg",
+					"settings":
+					{
+						"buffer_size": 328,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								328,
+								328
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/backbone-min.js",
+					"settings":
+					{
+						"buffer_size": 19909,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								243,
+								243
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 238.0,
+	"status_bar_visible": true
+}

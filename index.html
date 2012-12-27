@@ -15,6 +15,9 @@
         </style>
         <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
         <link href="css/skin.css" rel="stylesheet">
+
+        <!-- Highlight js stylesheet file -->
+        <link rel="stylesheet" type="text/css" href="css/default.css"/>
         <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -51,6 +54,7 @@
                     <div class="span9">
                         <div class="row-fluid article-content">
                         </div>
+
                     </div>
                 </div>
                 <hr>
@@ -62,6 +66,7 @@
             </div><!--/.fluid-container-->
         </script>
 
+
         <script id="tpl-sidebar" type="text/template">
             <ul class="nav nav-list">
                 {{#months}}
@@ -72,8 +77,10 @@
                 {{/months}}
             </ul>
         </script>
+     
         <div class="main-body">
         </div>
+ 
         <script src="js/json2.js"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/underscore-min.js"></script>
@@ -81,7 +88,17 @@
         <script src="js/mustache.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/showdown-min.js"></script>
+        <script src="js/highlight/highlight.pack.js"></script>
+
         <script src="js/blog.js"></script>
+
+        <script>
+          hljs.tabReplace = '    ';
+          hljs.initHighlightingOnLoad();
+        </script>
+ 
+
+
     </body>
     <!-- 为了迎接小天天的到来，本博客程序命名为小天天博客，祝小天天能健康茁壮成长。 huhao@2012-03-24 -->
 </html>

@@ -1,5 +1,5 @@
  
-#命令行环境使用phonegap开发android
+#命令行环境使用phonegap
 
 ###环境（必须）：
 	ant-1.82
@@ -11,11 +11,16 @@
 将android工具包下tool、planform-tool配置到系统环境变量path中
 
 将jdk配置到系统环境变量中
+
 	D:\Android\android-sdk-windows\platform-tools
 	D:\Android\android-sdk-windows\tools
+
 将ant配置到系统环境变量中
+
 	D:\Java\apache-ant-1.8.2\bin
+
 将phonegap配置到环境变量中
+
 	D:\Engine\phonegap2\lib\android\bin
 
 创建项目

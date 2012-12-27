@@ -64,17 +64,27 @@ $(function(){
             this.article = options.article;
             _.bindAll(this, 'render');
             $.get('post/'+this.article+'.md', function(data){
-                
                 that.model = data;
                 that.render();
             });
+           
         },
         render: function(){
             if(!this.model) return this;
             var html = blog.helper.markdown.makeHtml(this.model);
+
+             
+            
             $(this.el).html(html);
-        }
+            highlight();
+        } 
     });
+
+    function highlight(){
+          return $('pre code').each(function(i, e) {
+        return hljs.highlightBlock(e, '    ');
+      });
+    } 
 
     blog.views.Main = Backbone.View.extend({
         el:$('.main-body'),

@@ -9,8 +9,8 @@ https://github.com/onlytiancai/xiaotiantian
 
 * 纯js博客
 * json列表
+* 代码高亮展示
 
 ###计划改善
 
-* 将增加自定义样式功能
 * 优化首页显示

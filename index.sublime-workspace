@@ -3,33 +3,145 @@
 	{
 		"selected_items":
 		[
+			[
+				"fun",
+				"function"
+			],
+			[
+				"pad",
+				"padding-left"
+			],
+			[
+				"bor",
+				"border-top"
+			],
+			[
+				"border",
+				"border-left"
+			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/D/TOOLS/开发工具/del svn.reg",
+			"file": "/E/TDDOWNLOAD/lvkun.github.com-master/lvkun.github.com-master/index.html",
 			"settings":
 			{
-				"buffer_size": 328,
+				"buffer_size": 4448,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/E/TDDOWNLOAD/lvkun.github.com-master/lvkun.github.com-master/post/2010-03-30-gsoap-note.md",
+			"settings":
+			{
+				"buffer_size": 6505,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 3619,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/E/TDDOWNLOAD/lvkun.github.com-master/lvkun.github.com-master/js/staticblog.js",
+			"settings":
+			{
+				"buffer_size": 11212,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/blog.js",
+			"settings":
+			{
+				"buffer_size": 4647,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "css/default.css",
+			"settings":
+			{
+				"buffer_size": 1459,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "post/2012-09-06-about-octopress.md",
+			"settings":
+			{
+				"buffer_size": 392,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "js/backbone-min.js",
+			"file": "README.MD",
 			"settings":
 			{
-				"buffer_size": 19909,
-				"line_ending": "Unix"
+				"buffer_size": 138,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "post/index.md",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "README",
+			"settings":
+			{
+				"buffer_size": 131,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "CNAME",
+			"settings":
+			{
+				"buffer_size": 9,
+				"line_ending": "Windows"
 			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 81.0,
+		"height": 104.0,
 		"selected_items":
 		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"gits",
+				"Git: Status"
+			],
+			[
+				"com",
+				"Git: Commit"
+			],
+			[
+				"gitc",
+				"Git: Commit"
+			],
+			[
+				"git",
+				"Git: Commit"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
 			[
 				"form",
 				"Format: Javascript"
@@ -37,10 +149,6 @@
 			[
 				"plis",
 				"Package Control: List Packages"
-			],
-			[
-				"instal",
-				"Package Control: Install Package"
 			],
 			[
 				"for",
@@ -124,26 +232,52 @@
 	},
 	"file_history":
 	[
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/index.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/css/skin.css",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-09-09-phonegap-not-orientation.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-10-15-flex-mouse-png.md",
+		"/E/TDDOWNLOAD/prettify-1-Jun-2011/google-code-prettify/tests/prettify_test.html",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/index.html",
+		"/E/TDDOWNLOAD/lvkun.github.com-master/lvkun.github.com-master/js/staticblog.js",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/js/blog.js",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/tmp/duoshuo.html",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-09-05-android-commend-line.md",
+		"/C/Users/di.zhou/AppData/Local/Temp/HZ$D.262.4248/HZ$D.262.4250/highlight.js/classref.txt",
+		"/E/TDDOWNLOAD/prettify-1-Jun-2011/google-code-prettify/tests/prettify_test_2.html",
+		"/E/TDDOWNLOAD/prettify-1-Jun-2011/google-code-prettify/styles/index.html",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/README.MD",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/css/bootstrap.min.css",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/css/bootstrap-responsive.min.css",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/js/meta.js",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/index.json",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/js/underscore-min.js",
+		"/D/TOOLS/Portable/Sublime Text 2.0.1/Data/Packages/GBK Encoding Support/tmp/jquery.min.js                F%3A%5CPHPnow-1.5.6%5Chtdocs%5Cdizhou%5Cjs%5Cjquery.min.js",
+		"/D/engine.log",
+		"/D/TOOLS/开发工具/Dreamweaver_CS6/Dreamweaver_CS6/使用说明.txt",
+		"/F/myblog/_deploy/images/bird_32_gray_fail.png",
+		"/F/myblog/_deploy/images/bird_32_gray.png",
+		"/F/myblog/_deploy/images/code_bg.png",
+		"/F/myblog/_deploy/images/dotted-border.png",
+		"/F/myblog/_deploy/images/email.png",
+		"/F/myblog/_deploy/images/line-tile.png",
+		"/F/myblog/_deploy/images/noise.png",
+		"/F/myblog/_deploy/images/rss.png",
+		"/F/myblog/_deploy/images/search.png",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/js/main.js",
+		"/D/TOOLS/开发工具/del svn.reg",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/js/backbone-min.js",
+		"/E/东软项目/出差记录/出差.txt",
 		"/D/TOOLS/Portable/Sublime Text 2.0.1/ext.txt",
 		"/D/TOOLS/Portable/Sublime Text 2.0.1/ST2 便携版工具包.exe",
 		"/D/TOOLS/Portable/Sublime Text 2.0.1/_ssl.pyd",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/js/meta.js",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/index.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-09-07-mybaby.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-08-24-git-save-password.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-12-26-test.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/css/skin.css",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-09-06-about-octopress.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-09-05-android-commend-line.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-08-31-notepad++-markdown-plugin.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-09-09-phonegap-not-orientation.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-10-15-flex-mouse-png.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-10-30-zhouqi.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-11-05-miui-theme.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-12-26-HELLO-WORLD.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/css/bootstrap.min.css",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/index.html",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/js/main.js",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/js/mustache.min.js",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/css/1.css",
 		"/F/DI.ZHOU/post/2012-09-06-about-octopress.md",
@@ -177,7 +311,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
 		]
@@ -187,6 +321,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"hljs",
+			"update_highlight",
+			"archive",
+			"nav-list",
+			"/images",
+			"body",
+			"main-body",
 			"render",
 			"post"
 		],
@@ -196,6 +337,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"/images/bg"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -206,23 +348,271 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 10,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/D/TOOLS/开发工具/del svn.reg",
+					"file": "/E/TDDOWNLOAD/lvkun.github.com-master/lvkun.github.com-master/index.html",
 					"settings":
 					{
-						"buffer_size": 328,
+						"buffer_size": 4448,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								328,
-								328
+								3423,
+								3423
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2109.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/E/TDDOWNLOAD/lvkun.github.com-master/lvkun.github.com-master/post/2010-03-30-gsoap-note.md",
+					"settings":
+					{
+						"buffer_size": 6505,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2036,
+								3674
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2529.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 3619,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								520,
+								519
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 114.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/E/TDDOWNLOAD/lvkun.github.com-master/lvkun.github.com-master/js/staticblog.js",
+					"settings":
+					{
+						"buffer_size": 11212,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4381,
+								4381
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4389.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "js/blog.js",
+					"settings":
+					{
+						"buffer_size": 4647,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2303,
+								2303
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1026.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "css/default.css",
+					"settings":
+					{
+						"buffer_size": 1459,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1459,
+								1459
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 360.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "post/2012-09-06-about-octopress.md",
+					"settings":
+					{
+						"buffer_size": 392,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								392,
+								392
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "README.MD",
+					"settings":
+					{
+						"buffer_size": 138,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								138,
+								138
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "post/index.md",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "README",
+					"settings":
+					{
+						"buffer_size": 131,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								116,
+								116
 							]
 						],
 						"settings":
@@ -236,25 +626,24 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "js/backbone-min.js",
+					"buffer": 10,
+					"file": "CNAME",
 					"settings":
 					{
-						"buffer_size": 19909,
+						"buffer_size": 9,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								243,
-								243
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -298,7 +687,7 @@
 	"menu_visible": true,
 	"replace":
 	{
-		"height": 0.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":

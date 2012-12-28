@@ -122,6 +122,40 @@ $(function(){
                 var article_view = new blog.views.Article({article:this.article});
                 this.$(".article-content").empty().append(article_view.render().el);
             }
+
+            if(this.article=="index"){
+                this.$(".article-content").empty();
+                for (var i=0;i<this.data.articles.length;i++){
+                    var article = this.data.articles[i];
+                   
+                    $.get("post/"+article.file + ".md", function(artData,status,xhr) {
+                       
+                        var html ;
+                        if(artData.length>=200){
+                            html = blog.helper.markdown.makeHtml(artData.substring(0,200));
+                            
+                        }else{
+                            html = blog.helper.markdown.makeHtml(artData);
+                        }
+                       $(".article-content").append(html);
+                       $(".article-content").append("<br/>");
+                       $(".article-content").append("<p><a title=\"\" class=\"btn btn-primary pull-left\" href=\"#!show/"+article.file+"\"  onclick=\"\">继续阅读  →</a> </p><br/> <br/>");
+                       $(".article-content").append("<div class=\"line_dashed\"></div>");    
+                    });
+
+                    if(i>10){
+                        break;
+                    }
+                }
+
+
+            }
+
+             
+            
+
+           // this.$(".article-content").empty().append("dsafa");
+
         }
     }); 
 
@@ -141,6 +175,7 @@ $(function(){
         }, 
         index: function(){
             this.make_main_view(null, 'index');
+          
         },
         cate: function(cate){
             this.make_main_view(cate, 'index');

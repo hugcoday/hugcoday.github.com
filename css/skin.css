@@ -3,7 +3,7 @@
 .navbar .nav .active > a,
 .navbar .nav .active > a:hover,
 .navbar .nav > li > a:hover { background-color: #4480A1; }
-
+.line_dashed{border-top:1px dashed #C6C6C6;margin-top:15px;margin-bottom:15px}
 .well {  border: 1px; color: #0078B6; }
 .nav-list > li > a,
 .nav-list .nav-header { text-shadow: none;top: 10px;}

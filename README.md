@@ -9,6 +9,7 @@
 * 纯js博客
 * json列表
 * 代码高亮展示,默认使用[highlight.js](http://softwaremaniacs.org/soft/highlight/en/)，修改样式直接替换css/default.css样式即可
+* 首页显示最新10篇文章简介
 
 
 ###计划改善

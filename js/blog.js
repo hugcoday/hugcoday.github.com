@@ -170,7 +170,7 @@ $(function() {
             $(".article-content").append("<div class=\"line_dashed\"></div>");
             
             curIndex++;
-            if(curIndex < articles.length) {
+            if(curIndex < articles.length && curIndex < 10) {
                 addIndex(articles);
             }
 

@@ -10,6 +10,7 @@ $(function() {
     var blog = {};
     blog.views = {};
     blog.helper = {};
+    var BYB = {};
 
     blog.helper.build_main_model = function(data) {
         var result = {};
@@ -52,7 +53,29 @@ $(function() {
         return result;
     };
 
+    // 转化引擎
     blog.helper.markdown = new Showdown.converter();
+
+    // 增加多说评论
+    blog.helper.addDiscuz = function (_article_div,file,title){
+       
+        var el = document.createElement('div');//该div不需要设置class="ds-thread"
+        el.setAttribute('data-thread-key', file);//必选参数
+        el.setAttribute('data-url', file);//必选参数
+        el.setAttribute('data-author-key', 'hugcoday');//可选参数
+        DUOSHUO.EmbedThread(el);
+        _article_div.append(el);
+        
+        
+         
+    }
+
+    //代码高亮
+   blog.helper.highlight = function () {
+        return $('pre code').each(function(i, e) {
+            return hljs.highlightBlock(e, '    ');
+        });
+    }
 
     blog.views.Sidebar = Backbone.View.extend({
         template: $('#tpl-sidebar').html(),
@@ -82,18 +105,11 @@ $(function() {
             if(!this.model) return this;
             var html = blog.helper.markdown.makeHtml(this.model);
 
-
-
             $(this.el).html(html);
-            highlight();
+            blog.helper.highlight();
         }
     });
 
-    function highlight() {
-        return $('pre code').each(function(i, e) {
-            return hljs.highlightBlock(e, '    ');
-        });
-    }
 
     blog.views.Main = Backbone.View.extend({
         el: $('.main-body'),
@@ -129,11 +145,15 @@ $(function() {
                 this.$('.navbar-inner .nav li a[href="#!cate/' + this.cate + '"]').parent().addClass('active');
             }
 
-            if(this.article) {
+            if(this.article!="index") {
+
                 var article_view = new blog.views.Article({
                     article: this.article
                 });
                 this.$(".article-content").empty().append(article_view.render().el);
+                
+                //添加评论
+                 blog.helper.addDiscuz(this.$(".article-content"),this.article,"");
             }
 
             if(this.article == "index") {
@@ -152,8 +172,14 @@ $(function() {
             // this.$(".article-content").empty().append("dsafa");
         }
     });
-    var curIndex = 0;
 
+ 
+
+
+    
+    //文章计数
+    var curIndex = 0;
+    //首页展示
     function addIndex(articles) {
         $.get("post/" + articles[curIndex].file + ".md", function(artData) {
 
@@ -165,6 +191,8 @@ $(function() {
                 html = blog.helper.markdown.makeHtml(artData);
             }
             $(".article-content").append(html);
+
+            //添加继续阅读
             $(".article-content").append("<br/>");
             $(".article-content").append("<p><a title=\"\" class=\"btn btn-primary pull-left\" href=\"#!show/" + articles[curIndex].file + "\"  onclick=\"\">继续阅读  →</a> </p><br/> <br/>");
             $(".article-content").append("<div class=\"line_dashed\"></div>");

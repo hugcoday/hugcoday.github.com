@@ -150,6 +150,9 @@ $(function() {
                 var article_view = new blog.views.Article({
                     article: this.article
                 });
+                
+                loadingIndex = false;
+
                 this.$(".article-content").empty().append(article_view.render().el);
                 
                 //添加评论
@@ -160,7 +163,7 @@ $(function() {
                 this.$(".article-content").empty();
                 curIndex= 0;
                 var num = this.data.articles.length;
-
+                loadingIndex = true;
                 addIndex(this.data.articles);
 
 
@@ -179,30 +182,33 @@ $(function() {
     
     //文章计数
     var curIndex = 0;
+    var loadingIndex = false;
     //首页展示
     function addIndex(articles) {
-        $.get("post/" + articles[curIndex].file + ".md", function(artData) {
+        if(loadingIndex){
+            $.get("post/" + articles[curIndex].file + ".md", function(artData) {
 
-            var html;
-            if(artData.length >= 200) {
-                html = blog.helper.markdown.makeHtml(artData.substring(0, 200));
+                var html;
+                if(artData.length >= 200) {
+                    html = blog.helper.markdown.makeHtml(artData.substring(0, 200));
 
-            } else {
-                html = blog.helper.markdown.makeHtml(artData);
-            }
-            $(".article-content").append(html);
+                } else {
+                    html = blog.helper.markdown.makeHtml(artData);
+                }
+                $(".article-content").append(html);
 
-            //添加继续阅读
-            $(".article-content").append("<br/>");
-            $(".article-content").append("<p><a title=\"\" class=\"btn btn-primary pull-left\" href=\"#!show/" + articles[curIndex].file + "\"  onclick=\"\">继续阅读  →</a> </p><br/> <br/>");
-            $(".article-content").append("<div class=\"line_dashed\"></div>");
-            
-            curIndex++;
-            if(curIndex < articles.length && curIndex < 10) {
-                addIndex(articles);
-            }
+                //添加继续阅读
+                $(".article-content").append("<br/>");
+                $(".article-content").append("<p><a title=\"\" class=\"btn btn-primary pull-left\" href=\"#!show/" + articles[curIndex].file + "\"  onclick=\"\">继续阅读  →</a> </p><br/> <br/>");
+                $(".article-content").append("<div class=\"line_dashed\"></div>");
+                
+                curIndex++;
+                if(curIndex < articles.length && curIndex < 10) {
+                    addIndex(articles);
+                }
 
-        });
+            });
+        }
     }
 
     blog.App = Backbone.Router.extend({

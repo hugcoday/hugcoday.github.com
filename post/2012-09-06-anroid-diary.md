@@ -1,4 +1,4 @@
-#android-phonegap开发日记
+##android-phonegap开发日记
 
 
 ##启动慢，黑屏处理方式

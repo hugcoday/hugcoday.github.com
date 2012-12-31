@@ -1,6 +1,6 @@
-#phonegap小技巧
+##phonegap小技巧
 
-##phonegap禁止屏幕旋转
+###phonegap禁止屏幕旋转
 在AndroidManifest.xml中增加android:screenOrientation="landscape",如：
 
 	<activity android:name="faceturn" android:label="@string/app_name" 
@@ -9,4 +9,4 @@
 
 landscape是横向，portrait是纵向
 
-##phonegap全屏展示
+###phonegap全屏展示

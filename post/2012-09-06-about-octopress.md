@@ -1,4 +1,4 @@
-#关于octopress中文乱码
+##关于octopress中文乱码
 
 修改文件
 

@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"log",
+				"loadingIndex"
+			],
+			[
+				"ti",
+				"title"
+			],
+			[
+				"_",
+				"_article"
+			],
+			[
 				"a",
 				"articles"
 			],
@@ -32,67 +44,20 @@
 	"buffers":
 	[
 		{
-			"file": "/F/PHPnow-1.5.6/新建文件夹/buildIndex.bat",
+			"file": "post/2012-12-31-sublime-text-key.md",
 			"settings":
 			{
-				"buffer_size": 594,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "post/index.md",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "post/index.json",
-			"settings":
-			{
-				"buffer_size": 1161,
-				"line_ending": "Windows"
+				"buffer_size": 2182,
+				"line_ending": "Windows",
+				"name": "sumlime text 2 windows 快捷键"
 			}
 		},
 		{
 			"file": "js/blog.js",
 			"settings":
 			{
-				"buffer_size": 6038,
+				"buffer_size": 6935,
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/E/TDDOWNLOAD/lvkun.github.com-master/lvkun.github.com-master/js/staticblog.js",
-			"settings":
-			{
-				"buffer_size": 11212,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "<div class=\"summary\">    \n      <div class=\"catch_title\">#新浪2013年组织架构调整#</div>\n      <div class=\"title\" style=\"font-size: 21px;line-height: 120%\">\n        <a href=\"/p/200425.html\" data-no-turbolink=\"true\" onclick=\"javascript:_gaq.push(['_trackPageview', '/click/index_newtab/']);\" target=\"_blank\" title=\"曹国伟年终邮件：2013新浪组织架构调整，核心战略“移动为先”\">曹国伟年终邮件：2013新浪组织架构调整，核心战略“移动为先”</a>\n      </div>\n      <div class=\"excerpt\" style=\"font-size: 16px;line-height: 120%\">\n        <p>今天，新浪CEO曹国伟向全公司的员工发了一封邮件，回顾了一下2012年新浪取得的成绩，同时提出了新浪在2013年的战略规划。总的来说，新浪将划分为门户和微博两大板块，并且各自配备独立的产品、运营、技术等部门。门户业务由COO杜红负责，直接向曹国伟汇报，而曹国伟则全面负责微博业务</p>\n      </div>\n      <a title=\"曹国伟年终邮件：2013新浪组织架构调整，核心战略“移动为先” ( 2367 )\" class=\"btn btn-primary pull-right\" href=\"/p/200425.html\" onclick=\"javascript:_gaq.push(['_trackPageview', '/click/index_readmore/']);\">继续阅读  →</a>\n    </div>\n\n          <a title=\"\" class=\"btn btn-primary pull-right\"   onclick=\"\">继续阅读  →</a>",
-			"settings":
-			{
-				"buffer_size": 922,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "css/skin.css",
-			"settings":
-			{
-				"buffer_size": 1861,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "README.md",
-			"settings":
-			{
-				"buffer_size": 314,
-				"line_ending": "Windows"
 			}
 		}
 	],
@@ -216,38 +181,50 @@
 	},
 	"file_history":
 	[
+		"/F/PHPnow-1.5.6/新建文件夹/buildIndex.bat",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/index.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/index.json",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/js/blog.js",
+		"/E/TDDOWNLOAD/lvkun.github.com-master/lvkun.github.com-master/js/staticblog.js",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/css/skin.css",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/README.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/index.html",
+		"/F/PHPnow-1.5.6/htdocs/_netrc",
+		"/F/PHPnow-1.5.6/htdocs/1.bat",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/file/_netrc",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-08-24-git-save-password.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-08-31-notepad++-markdown-plugin.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-09-05-android-commend-line.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-09-06-about-octopress.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-09-06-anroid-diary.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-09-07-mybaby.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-09-09-phonegap-not-orientation.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-10-15-flex-mouse-png.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-10-30-zhouqi.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-11-05-miui-theme.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-12-26-HELLO-WORLD.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-12-26-test.md",
 		"/D/TOOLS/Portable/Sublime Text 2.0.1/Data/Packages/GBK Encoding Support/tmp/jquery.min.js                F%3A%5CPHPnow-1.5.6%5Chtdocs%5Cdizhou%5Cjs%5Cjquery.min.js",
 		"/D/TOOLS/Portable/Sublime Text 2.0.1/Data/Packages/GBK Encoding Support/tmp/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97.txt                F%3A%5CPHPnow-1.5.6%5C%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9%5C%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97.txt",
 		"/F/PHPnow-1.5.6/新建文件夹/更新日志.txt",
 		"/E/TDDOWNLOAD/lvkun.github.com-master/lvkun.github.com-master/post/2010-03-30-gsoap-note.md",
 		"/C/Users/di.zhou/AppData/Local/Temp/HZ$D.335.3264/HZ$D.335.3265/xiaotiantian-master/README.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/README.md",
 		"/C/Users/di.zhou/AppData/Local/Temp/HZ$D.335.3264/HZ$D.335.3266/xiaotiantian-master/README.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/index.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/buildIndex.bat",
 		"/E/TDDOWNLOAD/lvkun.github.com-master/lvkun.github.com-master/README.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/index.html",
-		"/E/TDDOWNLOAD/lvkun.github.com-master/lvkun.github.com-master/js/staticblog.js",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/js/blog.js",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/css/default.css",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-09-06-about-octopress.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/README.MD",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/README",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/CNAME",
 		"/E/TDDOWNLOAD/lvkun.github.com-master/lvkun.github.com-master/index.html",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/css/skin.css",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-09-09-phonegap-not-orientation.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-10-15-flex-mouse-png.md",
 		"/E/TDDOWNLOAD/prettify-1-Jun-2011/google-code-prettify/tests/prettify_test.html",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/tmp/duoshuo.html",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-09-05-android-commend-line.md",
 		"/C/Users/di.zhou/AppData/Local/Temp/HZ$D.262.4248/HZ$D.262.4250/highlight.js/classref.txt",
 		"/E/TDDOWNLOAD/prettify-1-Jun-2011/google-code-prettify/tests/prettify_test_2.html",
 		"/E/TDDOWNLOAD/prettify-1-Jun-2011/google-code-prettify/styles/index.html",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/css/bootstrap.min.css",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/css/bootstrap-responsive.min.css",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/js/meta.js",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/index.json",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/js/underscore-min.js",
 		"/D/engine.log",
 		"/D/TOOLS/开发工具/Dreamweaver_CS6/Dreamweaver_CS6/使用说明.txt",
@@ -267,13 +244,6 @@
 		"/D/TOOLS/Portable/Sublime Text 2.0.1/ext.txt",
 		"/D/TOOLS/Portable/Sublime Text 2.0.1/ST2 便携版工具包.exe",
 		"/D/TOOLS/Portable/Sublime Text 2.0.1/_ssl.pyd",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-09-07-mybaby.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-08-24-git-save-password.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-12-26-test.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-08-31-notepad++-markdown-plugin.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-10-30-zhouqi.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-11-05-miui-theme.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-12-26-HELLO-WORLD.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/js/mustache.min.js",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/css/1.css",
 		"/F/DI.ZHOU/post/2012-09-06-about-octopress.md",
@@ -317,6 +287,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Ctrl",
+			"\n	",
+			"\n       ",
+			"        \n",
+			"                \n",
 			"blog.helper.markdown",
 			"blog.views.Main",
 			"render",
@@ -349,191 +324,29 @@
 	"groups":
 	[
 		{
-			"selected": 7,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/F/PHPnow-1.5.6/新建文件夹/buildIndex.bat",
+					"file": "post/2012-12-31-sublime-text-key.md",
 					"settings":
 					{
-						"buffer_size": 594,
+						"buffer_size": 2182,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								243,
-								249
+								455,
+								455
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Batch File/Batch File.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "post/index.md",
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "post/index.json",
-					"settings":
-					{
-						"buffer_size": 1161,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								201,
-								209
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "js/blog.js",
-					"settings":
-					{
-						"buffer_size": 6038,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4724,
-								4724
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2821.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/E/TDDOWNLOAD/lvkun.github.com-master/lvkun.github.com-master/js/staticblog.js",
-					"settings":
-					{
-						"buffer_size": 11212,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7178,
-								7178
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 4104.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"settings":
-					{
-						"buffer_size": 922,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								922,
-								848
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "css/skin.css",
-					"settings":
-					{
-						"buffer_size": 1861,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								318,
-								318
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"auto_name": "sumlime text 2 windows 快捷键",
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -543,27 +356,29 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "README.md",
+					"buffer": 1,
+					"file": "js/blog.js",
 					"settings":
 					{
-						"buffer_size": 314,
+						"buffer_size": 6935,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								314,
-								314
+								1700,
+								1700
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 855.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

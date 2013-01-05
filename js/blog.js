@@ -10,7 +10,7 @@ $(function() {
     var blog = {};
     blog.views = {};
     blog.helper = {};
-    var BYB = {};
+ 
 
     blog.helper.build_main_model = function(data) {
         var result = {};

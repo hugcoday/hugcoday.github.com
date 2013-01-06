@@ -57,16 +57,16 @@ $(function() {
     blog.helper.markdown = new Showdown.converter();
 
     // 增加多说评论
-    blog.helper.addDiscuz = function (_article_div,file,title){
+    blog.helper.addDiscuz = function (_div,file,title){
        
         var el = document.createElement('div');//该div不需要设置class="ds-thread"
         el.setAttribute('data-thread-key', file);//必选参数
         el.setAttribute('data-url', file);//必选参数
         el.setAttribute('data-title', title);//必选参数
         
-        el.setAttribute('data-author-key', 'hugcoday');//可选参数
+        el.setAttribute('data-author-key', 'hugcoday@gmail.com');//可选参数
         DUOSHUO.EmbedThread(el);
-        _article_div.append(el);
+        _div.append(el);
         
          
     }

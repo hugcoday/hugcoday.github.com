@@ -66,8 +66,17 @@ $(function() {
         DUOSHUO.EmbedThread(el);
         _article_div.append(el);
         
-        
          
+    }
+
+    //评论列表
+    blog.helper.addDiscuzList = function(){
+        
+        if (typeof DUOSHUO !== 'undefined'){
+              
+            DUOSHUO.RecentComments('.sidebar-discuz');
+        }
+        
     }
 
     //代码高亮
@@ -159,6 +168,7 @@ $(function() {
                  blog.helper.addDiscuz(this.$(".article-content"),this.article,"");
             }
 
+
             if(this.article == "index") {
                 this.$(".article-content").empty();
                 curIndex= 0;
@@ -172,7 +182,7 @@ $(function() {
 
 
 
-            // this.$(".article-content").empty().append("dsafa");
+            
         }
     });
 
@@ -227,7 +237,7 @@ $(function() {
         },
         index: function() {
             this.make_main_view(null, 'index');
-
+            blog.helper.addDiscuzList();
         },
         cate: function(cate) {
             this.make_main_view(cate, 'index');

@@ -62,6 +62,8 @@ $(function() {
         var el = document.createElement('div');//该div不需要设置class="ds-thread"
         el.setAttribute('data-thread-key', file);//必选参数
         el.setAttribute('data-url', file);//必选参数
+        el.setAttribute('data-title', title);//必选参数
+        
         el.setAttribute('data-author-key', 'hugcoday');//可选参数
         DUOSHUO.EmbedThread(el);
         _article_div.append(el);
@@ -69,15 +71,28 @@ $(function() {
          
     }
 
-    //评论列表
-    blog.helper.addDiscuzList = function(){
+    // 评论列表
+
+    blog.helper.addDiscuzList = function(_div){
+
+        var _discuz_title = document.createElement('h3');//该div
+        _discuz_title.innerHTML="最新评论";
+        _div.append(_discuz_title);
+
+        var el = document.createElement('ul');//该div
+        el.setAttribute('data-num-items', "10");//必选参数
+        el.setAttribute('data-excerpt-length',"70");//必选参数
+        el.setAttribute('data-show-title', "0"); 
+
         
-        if (typeof DUOSHUO !== 'undefined'){
-              
-            DUOSHUO.RecentComments('.sidebar-discuz');
-        }
-        
+        DUOSHUO.RecentComments(el);
+        _div.append(el);
+ 
+       
+         
     }
+
+  
 
     //代码高亮
    blog.helper.highlight = function () {
@@ -103,6 +118,7 @@ $(function() {
         initialize: function(options) {
             var that = this;
             this.article = options.article;
+
             _.bindAll(this, 'render');
             $.get('post/' + this.article + '.md', function(data) {
                 that.model = data;
@@ -163,9 +179,12 @@ $(function() {
                 loadingIndex = false;
 
                 this.$(".article-content").empty().append(article_view.render().el);
-                
+                 
                 //添加评论
-                 blog.helper.addDiscuz(this.$(".article-content"),this.article,"");
+                blog.helper.addDiscuz(this.$(".article-content"),this.article,"");
+               
+              
+                 
             }
 
 
@@ -174,12 +193,15 @@ $(function() {
                 curIndex= 0;
                 var num = this.data.articles.length;
                 loadingIndex = true;
+
                 addIndex(this.data.articles);
 
 
 
             }
 
+             // 添加评论列表
+            blog.helper.addDiscuzList(this.$(".sidebar-comment"));
 
 
             
@@ -237,7 +259,7 @@ $(function() {
         },
         index: function() {
             this.make_main_view(null, 'index');
-            blog.helper.addDiscuzList();
+            
         },
         cate: function(cate) {
             this.make_main_view(cate, 'index');

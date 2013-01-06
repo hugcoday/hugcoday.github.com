@@ -9,7 +9,7 @@
 
         <!-- Le styles -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="favicon.png" rel="icon">
+        <link href="favicon.png" rel="shortcut icon">
         <style type="text/css">
         
         </style>
@@ -23,8 +23,7 @@
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
-        <!-- Le fav and touch icons -->
-        <link rel="shortcut icon" href="static/favicon.ico">
+    
     </head>
 
     <body>
@@ -45,19 +44,16 @@
                 </div>
             </div>
 
+
             <div class="container-fluid">
+
                 <div class="row-fluid">
                     <div class="span3">
                         <div class="well sidebar-nav">
                         </div>
-                        <div class="well sidebar-discuz">
-                            <h3 class="widgettitle">近期评论</h3>
-                            <ul class="ds-recent-comments" data-num-items="10" data-show-avatars="0" data-show-time="0" data-show-title="0" data-show-admin="0" data-excerpt-length="70"></ul>
-
-
-                            
-
+                        <div class="well sidebar-comment">
                         </div>
+                        
 
                     </div>
                     <div class="span9">
@@ -86,10 +82,16 @@
                 {{/months}}
             </ul>
         </script>
+
+        
+       
      
         <div class="main-body">
         </div>
+
+
  
+                      
         <script src="js/json2.js"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/underscore-min.js"></script>
@@ -104,6 +106,11 @@
         <script>
         
            var duoshuoQuery = {short_name:"hugcoday"};
+
+           if (typeof DUOSHUO !== 'undefined'){
+                  
+                DUOSHUO.RecentComments('.ds-recent-comments');
+            }
         </script>
 
         

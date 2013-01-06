@@ -91,6 +91,8 @@ $(function() {
        
          
     }
+
+    //近期访客
     blog.helper.addDiscuzUsers = function(_div){
 
         var _discuz_title = document.createElement('h3'); 

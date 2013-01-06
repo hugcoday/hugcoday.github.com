@@ -75,17 +75,35 @@ $(function() {
 
     blog.helper.addDiscuzList = function(_div){
 
-        var _discuz_title = document.createElement('h3');//该div
+        var _discuz_title = document.createElement('h3'); 
         _discuz_title.innerHTML="最新评论";
         _div.append(_discuz_title);
 
-        var el = document.createElement('ul');//该div
-        el.setAttribute('data-num-items', "10");//必选参数
-        el.setAttribute('data-excerpt-length',"70");//必选参数
+        var el = document.createElement('ul'); 
+        el.setAttribute('data-num-items', "10");
+        el.setAttribute('data-excerpt-length',"70"); 
         el.setAttribute('data-show-title', "0"); 
 
         
         DUOSHUO.RecentComments(el);
+        _div.append(el);
+ 
+       
+         
+    }
+    blog.helper.addDiscuzUsers = function(_div){
+
+        var _discuz_title = document.createElement('h3'); 
+        _discuz_title.innerHTML="近期访客";
+        _div.append(_discuz_title);
+
+        var el = document.createElement('ul'); 
+        el.setAttribute('data-num-items', "10");
+        el.setAttribute('data-excerpt-length',"70"); 
+        el.setAttribute('data-show-title', "0"); 
+
+        
+        DUOSHUO.RecentVisitors(el);
         _div.append(el);
  
        
@@ -202,7 +220,7 @@ $(function() {
 
              // 添加评论列表
             blog.helper.addDiscuzList(this.$(".sidebar-comment"));
-
+            blog.helper.addDiscuzUsers(this.$(".sidebar-users"));
 
             
         }

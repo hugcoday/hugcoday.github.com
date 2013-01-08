@@ -7,6 +7,7 @@
         {"name": "other", "text":"其它"}
     ],
     "articles":[
+        {"title": "关于Cloud foundry云平台", "file": "2013-01-08-cloud-foundry", "cate":"tech"},
         {"title": "多说使用帮助", "file": "2013-01-06-duoshuo", "cate":"tech"},
         {"title": "ceo 13件事", "file": "2013-01-06-13things", "cate":"tech"},
         {"title": "sumlime text 2 windows 快捷键", "file": "2012-12-31-sublime-text-key", "cate":"tech"},

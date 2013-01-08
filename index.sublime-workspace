@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"add",
+				"addDiscuzList"
+			],
+			[
 				"log",
 				"loadingIndex"
 			],
@@ -44,19 +48,35 @@
 	"buffers":
 	[
 		{
-			"file": "post/2012-12-31-sublime-text-key.md",
-			"settings":
-			{
-				"buffer_size": 2182,
-				"line_ending": "Windows",
-				"name": "sumlime text 2 windows 快捷键"
-			}
-		},
-		{
 			"file": "js/blog.js",
 			"settings":
 			{
-				"buffer_size": 6935,
+				"buffer_size": 8143,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "post/2013-01-06-duoshuo.md",
+			"settings":
+			{
+				"buffer_size": 615,
+				"line_ending": "Windows",
+				"name": "多说评论使用帮助"
+			}
+		},
+		{
+			"file": "post/index.json",
+			"settings":
+			{
+				"buffer_size": 1415,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 3998,
 				"line_ending": "Unix"
 			}
 		}
@@ -64,16 +84,32 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 219.0,
+		"height": 173.0,
 		"selected_items":
 		[
+			[
+				"ssja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"form",
+				"Format: Javascript"
+			],
+			[
+				"sy",
+				"Set Syntax: JavaScript"
+			],
 			[
 				"for",
 				"Format: Javascript"
 			],
 			[
-				"form",
-				"Format: Javascript"
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"intall",
+				"Package Control: Install Package"
 			],
 			[
 				"insta",
@@ -128,10 +164,6 @@
 				"Package Control: Install Package"
 			],
 			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
 				"list",
 				"Package Control: List Packages"
 			],
@@ -148,10 +180,6 @@
 				"Package Control: List Packages"
 			],
 			[
-				"intall",
-				"Package Control: Install Package"
-			],
-			[
 				"intal",
 				"Package Control: Install Package"
 			],
@@ -164,11 +192,11 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 416.0
+		"width": 400.0
 	},
 	"console":
 	{
-		"height": 0.0
+		"height": 153.0
 	},
 	"distraction_free":
 	{
@@ -181,14 +209,27 @@
 	},
 	"file_history":
 	[
+		"/D/TOOLS/Portable/Sublime Text 2.0.1/Data/Packages/GBK Encoding Support/tmp/readme.txt                C%3A%5CUsers%5Cdi.zhou%5CAppData%5CLocal%5CTemp%5CHZ%24D.718.4666%5CHZ%24D.718.4667%5CVHD_OneKey_2011%5Creadme.txt",
+		"/C/Users/di.zhou/AppData/Local/Temp/HZ$D.718.4666/HZ$D.718.4667/VHD_OneKey_2011/readme.txt",
+		"/D/TOOLS/Portable/Sublime Text 2.0.1/Data/Packages/GBK Encoding Support/tmp/Readme_CH.txt                E%3A%5CProgram+Files%5CFoxmail+7.0%5CInfo%5CReadme_CH.txt",
+		"/E/Program Files/Foxmail 7.0/Info/Readme_CH.txt",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/tech/2013-01-06-13things.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/index.json",
+		"/C/Users/di.zhou/AppData/Local/Temp/HZ$D.847.3426/HZ$D.847.3427/Markdown-Syntax-CN/syntax.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-12-26-test.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/index.html",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/README.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/index2.html",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-12-31-sublime-text-key.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/js/blog.js",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/CNAME",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/中文",
+		"/D/TOOLS/Portable/Sublime Text 2.0.1/Data/Packages/GBK Encoding Support/tmp/sn.txt                F%3A%5CIBM%5CVM7%5Csn.txt",
+		"/F/IBM/VM7/sn.txt",
 		"/F/PHPnow-1.5.6/新建文件夹/buildIndex.bat",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/index.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/index.json",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/js/blog.js",
 		"/E/TDDOWNLOAD/lvkun.github.com-master/lvkun.github.com-master/js/staticblog.js",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/css/skin.css",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/README.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/index.html",
 		"/F/PHPnow-1.5.6/htdocs/_netrc",
 		"/F/PHPnow-1.5.6/htdocs/1.bat",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/file/_netrc",
@@ -203,7 +244,6 @@
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-10-30-zhouqi.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-11-05-miui-theme.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-12-26-HELLO-WORLD.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-12-26-test.md",
 		"/D/TOOLS/Portable/Sublime Text 2.0.1/Data/Packages/GBK Encoding Support/tmp/jquery.min.js                F%3A%5CPHPnow-1.5.6%5Chtdocs%5Cdizhou%5Cjs%5Cjquery.min.js",
 		"/D/TOOLS/Portable/Sublime Text 2.0.1/Data/Packages/GBK Encoding Support/tmp/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97.txt                F%3A%5CPHPnow-1.5.6%5C%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9%5C%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97.txt",
 		"/F/PHPnow-1.5.6/新建文件夹/更新日志.txt",
@@ -215,7 +255,6 @@
 		"/F/PHPnow-1.5.6/htdocs/dizhou/css/default.css",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/README.MD",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/README",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/CNAME",
 		"/E/TDDOWNLOAD/lvkun.github.com-master/lvkun.github.com-master/index.html",
 		"/E/TDDOWNLOAD/prettify-1-Jun-2011/google-code-prettify/tests/prettify_test.html",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/tmp/duoshuo.html",
@@ -287,6 +326,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"addDiscuzUsers",
+			"Main",
+			"sync",
+			"3",
+			"article",
+			"addIndex",
+			"loadingIndex",
+			"addDiscuz",
+			"       \n",
+			"thread",
+			"addDiscuzList",
+			"highlight",
+			"sidebar-nav",
+			".sidebar-nav",
+			"Sidebar",
 			"Ctrl",
 			"\n	",
 			"\n       ",
@@ -324,30 +378,59 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "post/2012-12-31-sublime-text-key.md",
+					"file": "js/blog.js",
 					"settings":
 					{
-						"buffer_size": 2182,
+						"buffer_size": 8143,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								455,
-								455
+								1791,
+								1791
 							]
 						],
 						"settings":
 						{
-							"auto_name": "sumlime text 2 windows 快捷键",
-							"syntax": "Packages/Markdown/Markdown.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2715.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "post/2013-01-06-duoshuo.md",
+					"settings":
+					{
+						"buffer_size": 615,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								492,
+								506
+							]
+						],
+						"settings":
+						{
+							"auto_name": "多说评论使用帮助",
+							"is_preview": true,
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -356,29 +439,59 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "js/blog.js",
+					"buffer": 2,
+					"file": "post/index.json",
 					"settings":
 					{
-						"buffer_size": 6935,
+						"buffer_size": 1415,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1700,
-								1700
+								268,
+								268
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 855.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 3998,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1957,
+								1957
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 684.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -388,7 +501,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 35.0
 	},
 	"input":
 	{
@@ -438,10 +551,10 @@
 		],
 		"width": 380.0
 	},
-	"show_minimap": true,
+	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 238.0,
-	"status_bar_visible": true
+	"status_bar_visible": false
 }

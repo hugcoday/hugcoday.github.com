@@ -56,6 +56,15 @@
 			}
 		},
 		{
+			"file": "post/2013-01-08-cloud-foundry.md",
+			"settings":
+			{
+				"buffer_size": 258,
+				"line_ending": "Windows",
+				"name": "#关于Cloud foundry云平台"
+			}
+		},
+		{
 			"file": "post/2013-01-06-duoshuo.md",
 			"settings":
 			{
@@ -68,7 +77,7 @@
 			"file": "post/index.json",
 			"settings":
 			{
-				"buffer_size": 1415,
+				"buffer_size": 1579,
 				"line_ending": "Windows"
 			}
 		},
@@ -78,6 +87,23 @@
 			{
 				"buffer_size": 3998,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 617,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "post/2013-01-08-26hours.md",
+			"settings":
+			{
+				"buffer_size": 178,
+				"line_ending": "Windows",
+				"name": "#26小时"
 			}
 		}
 	],
@@ -393,8 +419,8 @@
 						"selection":
 						[
 							[
-								1791,
-								1791
+								7363,
+								7363
 							]
 						],
 						"settings":
@@ -405,13 +431,40 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2715.0,
+						"translation.y": 4949.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "post/2013-01-08-cloud-foundry.md",
+					"settings":
+					{
+						"buffer_size": 258,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								163,
+								163
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#关于Cloud foundry云平台",
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "post/2013-01-06-duoshuo.md",
 					"settings":
 					{
@@ -439,19 +492,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "post/index.json",
 					"settings":
 					{
-						"buffer_size": 1415,
+						"buffer_size": 1579,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								268,
-								268
+								805,
+								805
 							]
 						],
 						"settings":
@@ -461,14 +514,14 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
+						"translation.x": 36.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "index.html",
 					"settings":
 					{
@@ -479,8 +532,8 @@
 						"selection":
 						[
 							[
-								1957,
-								1957
+								944,
+								944
 							]
 						],
 						"settings":
@@ -491,7 +544,61 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 684.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "README.md",
+					"settings":
+					{
+						"buffer_size": 617,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								325,
+								325
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "post/2013-01-08-26hours.md",
+					"settings":
+					{
+						"buffer_size": 178,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								22,
+								22
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#26小时",
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

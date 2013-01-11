@@ -16,7 +16,7 @@
 
 ###计划改善
 
-* 优化首页 
+* 首页增加翻页
 * 个人信息展示
 * 优化分类
 * 友情链接
@@ -27,11 +27,17 @@
 
 * 在post文件夹下新建文件，文件名为：日期+标题，文件以.md结尾，例如：2012-12-12-hello-world.md
 * 修改post/index.json文件，其中
+
 	site_name为站点名称；
 	copyright 为版权标示；
 	cates为文章分类；
 	articles为文章列表。
-  例如增加2012-12-12-hello-world.md,articles中增加一条记录
-  {"title": "Hello World", "file": "2012-12-12-hello-world", "cate":"tech"},
+
+  例如
+	
+	增加2012-12-12-hello-world.md,articles中增加一条记录
+ 
+	
+	{"title": "Hello World", "file": "2012-12-12-hello-world", "cate":"tech"},
 
 	

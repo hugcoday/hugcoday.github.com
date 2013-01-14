@@ -85,7 +85,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 3998,
+				"buffer_size": 4024,
 				"line_ending": "Unix"
 			}
 		},
@@ -93,7 +93,7 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 617,
+				"buffer_size": 662,
 				"line_ending": "Windows"
 			}
 		},
@@ -404,7 +404,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -419,8 +419,8 @@
 						"selection":
 						[
 							[
-								7363,
-								7363
+								1940,
+								1940
 							]
 						],
 						"settings":
@@ -431,7 +431,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4949.0,
+						"translation.y": 1083.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -455,7 +455,9 @@
 						"settings":
 						{
 							"auto_name": "#关于Cloud foundry云平台",
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+							"is_preview": true,
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -503,8 +505,8 @@
 						"selection":
 						[
 							[
-								805,
-								805
+								188,
+								188
 							]
 						],
 						"settings":
@@ -525,15 +527,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 3998,
+						"buffer_size": 4024,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								944,
-								944
+								1222,
+								1222
 							]
 						],
 						"settings":
@@ -544,7 +546,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 513.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -554,15 +556,15 @@
 					"file": "README.md",
 					"settings":
 					{
-						"buffer_size": 617,
+						"buffer_size": 662,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								325,
-								325
+								461,
+								461
 							]
 						],
 						"settings":
@@ -571,7 +573,7 @@
 							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 228.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -595,7 +597,9 @@
 						"settings":
 						{
 							"auto_name": "#26小时",
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+							"is_preview": true,
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -662,6 +666,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 238.0,
+	"side_bar_width": 211.0,
 	"status_bar_visible": false
 }

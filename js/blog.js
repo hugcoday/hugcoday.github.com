@@ -210,11 +210,11 @@ $(function() {
 
             if(this.article == "index") {
                 this.$(".article-content").empty();
-                curIndex= 0;
-                var num = this.data.articles.length;
+                curIndex = 0;
+                hasShowedNum = 0;
                 loadingIndex = true;
 
-                addIndex(this.data.articles);
+                addIndex(this.cate,this.data.articles);
 
 
 
@@ -234,10 +234,22 @@ $(function() {
     
     //文章计数
     var curIndex = 0;
+    var hasShowedNum = 0;
     var loadingIndex = false;
     //首页展示
-    function addIndex(articles) {
+    function addIndex(cate,articles) {
+
         if(loadingIndex){
+            
+            if(cate !=null && articles[curIndex].cate !=cate) {
+                curIndex++;
+                if(curIndex < articles.length && hasShowedNum < 10) {
+                    hasShowedNum ++;
+                    addIndex(cate,articles);
+                }
+                return;
+            }
+
             $.get("post/" + articles[curIndex].file + ".md", function(artData) {
 
                 var html;
@@ -256,8 +268,9 @@ $(function() {
                 
                 curIndex++;
                 if(curIndex < articles.length && curIndex < 10) {
-                    addIndex(articles);
+                    addIndex(cate,articles);
                 }
+                 
 
             });
         }

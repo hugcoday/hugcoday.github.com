@@ -26,18 +26,26 @@
 ###使用方式
 
 * 在post文件夹下新建文件，文件名为：日期+标题，文件以.md结尾，例如：2012-12-12-hello-world.md
-* 修改post/index.json文件，其中
 
+* 修改post/index.json文件，其中
+	
 	site_name为站点名称；
 	copyright 为版权标示；
 	cates为文章分类；
 	articles为文章列表。
 
-  例如
+例如
 	
-	增加2012-12-12-hello-world.md,articles中增加一条记录
+增加2012-12-12-hello-world.md,articles中增加一条记录
  
 	
 	{"title": "Hello World", "file": "2012-12-12-hello-world", "cate":"tech"},
 
+
+评论修改：
+	修改index.html中的
+
+	var duoshuoQuery = {short_name:"hugcoday"};
+
+替换hugcoday 为你在多说上注册的二级域名，具体参考多说帮助文档
 	

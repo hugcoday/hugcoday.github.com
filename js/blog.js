@@ -187,6 +187,7 @@ $(function() {
             this.$(".sidebar-nav").empty().append(sidebar_view.render().el);
 
             if(this.cate) {
+                loadingIndex = false;
                 this.$('.navbar-inner .nav li a[href="#!cate/' + this.cate + '"]').parent().addClass('active');
             }
 
@@ -235,7 +236,7 @@ $(function() {
     //文章计数
     var curIndex = 0;
     var hasShowedNum = 0;
-    var loadingIndex = false;
+    var loadingIndex = 0;
     //首页展示
     function addIndex(cate,articles) {
 

@@ -53,6 +53,19 @@ $(function() {
         return result;
     };
 
+    blog.helper.getHost = function(url) {
+            var host = "null";
+            if(typeof url == "undefined"
+                            || null == url)
+                    url = window.location.href;
+            var regex = /.*\:\/\/([^\/]*).*/;
+            var match = url.match(regex);
+            if(typeof match != "undefined"
+                            && null != match)
+                    host = match[1];
+            return host;
+    }
+    
     // 转化引擎
     blog.helper.markdown = new Showdown.converter();
 
@@ -111,6 +124,17 @@ $(function() {
        
          
     }
+
+    blog.helper.addpages = function(index,articles,_div){
+        var el = document.createElement('ul'); 
+        el.setAttribute('data-num-items', "10");
+        el.setAttribute('data-excerpt-length',"70"); 
+        el.setAttribute('data-show-title', "0"); 
+
+    }
+
+    
+    var curPageNum = 1;
 
   
 
@@ -217,7 +241,7 @@ $(function() {
 
                 addIndex(this.cate,this.data.articles);
 
-
+                
 
             }
 
@@ -236,7 +260,7 @@ $(function() {
     //文章计数
     var curIndex = 0;
     var hasShowedNum = 0;
-    var loadingIndex = 0;
+    var loadingIndex = false;
     //首页展示
     function addIndex(cate,articles) {
 

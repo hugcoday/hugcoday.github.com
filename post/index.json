@@ -7,6 +7,8 @@
         {"name": "other", "text":"其它"}
     ],
     "articles":[
+        {"title": "恩来语录", "file": "2013-02-04-enlai", "cate":"life"},
+        {"title": "朋友", "file": "2013-02-02-friend", "cate":"life"},
         {"title": "26小时", "file": "2013-01-08-26hours", "cate":"life"},
         {"title": "关于Cloud foundry云平台", "file": "2013-01-08-cloud-foundry", "cate":"tech"},
         {"title": "多说使用帮助", "file": "2013-01-06-duoshuo", "cate":"tech"},

@@ -14,6 +14,7 @@ $(function() {
 
     blog.helper.build_main_model = function(data) {
         var result = {};
+        document.title = data.site_name;
         result.site_name = data.site_name;
         result.copyright = data.copyright;
         result.navlist = _.map(data.cates, function(cate) {

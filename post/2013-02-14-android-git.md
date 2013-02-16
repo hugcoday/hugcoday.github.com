@@ -49,10 +49,10 @@
 	git commit -a
 	git push origin master
 
-另，因为terminal 下的git命令不全，没有git-merge命令，如果出现冲突，pull命令就异常，我是全删，再pull
+另，因为terminal 下的git命令不全，没有git-merge命令，如果出现冲突，pull命令就异常
 
 有文章使用下方法：
 	
-	但是可能git某些操作的时候会有错误，因为有软链接缺失，看什么错误，到“system/bin/”下执行类似“ln -s git git-merge”的命令就可以
+	可能git某些操作的时候会有错误，因为有软链接缺失，看什么错误，到“system/bin/”下执行类似“ln -s git git-merge”的命令就可以
 
 

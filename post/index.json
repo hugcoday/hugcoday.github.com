@@ -7,6 +7,7 @@
         {"name": "other", "text":"其它"}
     ],
     "articles":[
+        {"title": "JavaScript取整、取余数", "file": "2013-02-08-javascript-math", "cate":"tech"},
         {"title": "恩来语录", "file": "2013-02-04-enlai", "cate":"life"},
         {"title": "朋友", "file": "2013-02-02-friend", "cate":"life"},
         {"title": "26小时", "file": "2013-01-08-26hours", "cate":"life"},

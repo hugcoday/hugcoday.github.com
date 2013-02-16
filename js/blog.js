@@ -19,7 +19,7 @@ $(function() {
         result.copyright = data.copyright;
         result.navlist = _.map(data.cates, function(cate) {
             return {
-                link: '#!cate/' + cate.name,
+                link: '#cate/' + cate.name,
                 text: cate.text
             };
         });
@@ -39,6 +39,7 @@ $(function() {
         result.months = _.groupBy(articles, function(article) {
             return article.file.substring(0, 7);
         });
+        
         result.months = _.map(result.months, function(value, key) {
             return {
                 month: key,
@@ -54,6 +55,28 @@ $(function() {
         return result;
     };
 
+    // 增加分页条
+    blog.helper.build_pagebar_model = function(data,cate){
+        var result = {};
+        var articles = data.articles;
+        if(cate) {
+            articles = _.filter(articles, function(article) {
+                return article.cate == cate;
+            });
+        }
+        var pages = [];
+        var pagecounts = Math.ceil(articles.length/10);
+        for (var i = 1; i <= pagecounts; i++) {
+
+            pages[i] = {"num":i} ; 
+        };
+        result.pages = pages;
+        
+        return result;
+
+    }
+
+    // 获取当前地址
     blog.helper.getHost = function(url) {
             var host = "null";
             if(typeof url == "undefined"
@@ -63,7 +86,9 @@ $(function() {
             var match = url.match(regex);
             if(typeof match != "undefined"
                             && null != match)
-                    host = match[1];
+                    host = match[0];
+            var urls = url.split("#show/");
+            host = urls[0]+'show/';
             return host;
     }
     
@@ -72,10 +97,11 @@ $(function() {
 
     // 增加多说评论
     blog.helper.addDiscuz = function (_div,file,title){
-       
+        var host = blog.helper.getHost();
+        
         var el = document.createElement('div');//该div不需要设置class="ds-thread"
         el.setAttribute('data-thread-key', file);//必选参数
-        el.setAttribute('data-url', file);//必选参数
+        el.setAttribute('data-url', host+file);//必选参数
         el.setAttribute('data-title', title);//必选参数
         
         el.setAttribute('data-author-key', 'hugcoday@gmail.com');//可选参数
@@ -140,11 +166,25 @@ $(function() {
   
 
     //代码高亮
-   blog.helper.highlight = function () {
+    blog.helper.highlight = function () {
         return $('pre code').each(function(i, e) {
             return hljs.highlightBlock(e, '    ');
         });
     }
+
+    blog.views.Pagebar = Backbone.View.extend({
+        template:$('#tpl-pagebar').html(),
+        initialize:function(options){
+            this.model = options.model;
+            _.bindAll(this,'render');
+        },
+        render:function(){
+            var html = Mustache.to_html(this.template, this.model);
+          //  alert(dd);
+            $(this.el).append(html);
+            return this;
+        }
+    })
 
     blog.views.Sidebar = Backbone.View.extend({
         template: $('#tpl-sidebar').html(),
@@ -158,6 +198,8 @@ $(function() {
             return this;
         }
     });
+
+
 
     blog.views.Article = Backbone.View.extend({
         initialize: function(options) {
@@ -200,20 +242,24 @@ $(function() {
                 this.sync();
                 return this;
             }
-
+            // 主页面
             var main_model = blog.helper.build_main_model(this.data);
             var main_html = Mustache.to_html(this.template, main_model);
             $(this.el).empty().append(main_html);
 
+            //侧边栏
             var sidebar_mode = blog.helper.build_sidebar_model(this.data, this.cate);
             var sidebar_view = new blog.views.Sidebar({
                 model: sidebar_mode
             });
             this.$(".sidebar-nav").empty().append(sidebar_view.render().el);
 
+            
+
+
             if(this.cate) {
                 loadingIndex = false;
-                this.$('.navbar-inner .nav li a[href="#!cate/' + this.cate + '"]').parent().addClass('active');
+                this.$('.navbar-inner .nav li a[href="#cate/' + this.cate + '"]').parent().addClass('active');
             }
 
             if(this.article!="index") {
@@ -240,7 +286,17 @@ $(function() {
                 hasShowedNum = 0;
                 loadingIndex = true;
 
-                addIndex(this.cate,this.data.articles);
+                blog.views.make_main_index(this.cate,this.data.articles);
+
+
+                //页码工具条
+                var pagebar_model = blog.helper.build_pagebar_model(this.data, this.cate);
+                
+                var pagebar_view = new blog.views.Pagebar({
+                    model: pagebar_model
+                });
+               
+                this.$(".pagebar").empty().append(pagebar_view.render().el);
 
                 
 
@@ -263,7 +319,7 @@ $(function() {
     var hasShowedNum = 0;
     var loadingIndex = false;
     //首页展示
-    function addIndex(cate,articles) {
+    blog.views.make_main_index = function addIndex(cate,articles,num) {
 
         if(loadingIndex){
             
@@ -289,7 +345,7 @@ $(function() {
 
                 //添加继续阅读
                 $(".article-content").append("<br/>");
-                $(".article-content").append("<p><a title=\"\" class=\"btn btn-primary pull-left\" href=\"#!show/" + articles[curIndex].file + "\"  onclick=\"\">继续阅读  →</a> </p><br/> <br/>");
+                $(".article-content").append("<p><a title=\"\" class=\"btn btn-primary pull-left\" href=\"#show/" + articles[curIndex].file + "\"  onclick=\"\">继续阅读  →</a> </p><br/> <br/>");
                 $(".article-content").append("<div class=\"line_dashed\"></div>");
                 
                 curIndex++;
@@ -305,8 +361,9 @@ $(function() {
     blog.App = Backbone.Router.extend({
         routes: {
             "": "index",
-            "!cate/:cate": "cate",
-            "!show/:article": "show"
+            "cate/:cate": "cate",
+            "show/:article": "show",
+            "page/:num":"page"
         },
         make_main_view: function(cate, article) {
             if(!this.main) {
@@ -325,6 +382,9 @@ $(function() {
         },
         show: function(article) {
             this.make_main_view(null, article);
+        },
+        page: function(num){
+            this.add
         }
     });
 

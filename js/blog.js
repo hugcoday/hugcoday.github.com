@@ -343,6 +343,7 @@ $(function() {
                 } else {
                     html = blog.helper.markdown.makeHtml(artData);
                 }
+                
                 $(".article-content").append(html);
 
                 //添加继续阅读

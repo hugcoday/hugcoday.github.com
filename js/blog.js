@@ -6,7 +6,7 @@ $(function() {
         cache: false
     });
 
-
+	//ceshi
     var blog = {};
     blog.views = {};
     blog.helper = {};

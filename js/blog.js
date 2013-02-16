@@ -6,11 +6,9 @@ $(function() {
         cache: false
     });
 
-<<<<<<< HEAD
+ 
 	//ceshi
-=======
-	//ceshi
->>>>>>> 3e5f09a8add8475d2c8b1970d4de857d23687501
+ 
     var blog = {};
     blog.views = {};
     blog.helper = {};

@@ -1,4 +1,4 @@
-#JavaScript取整、取余数   
+#JavaScript取整数
    
 1.丢弃小数部分，保留整数部分
 

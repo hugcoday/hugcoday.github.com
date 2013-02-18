@@ -11,8 +11,8 @@
 * 代码高亮展示,默认使用[highlight.js](http://softwaremaniacs.org/soft/highlight/en/)，修改样式直接替换css/default.css样式即可
 * 首页显示最新10篇文章简介
 * 首页增加分页（开发中）
-* 首页增加最新评论、近期访客
-* 用[多说](http://duoshuo.com)评论
+* 首页增加最新评论、近期访客（使用[多说](http://duoshuo.com)评论）
+* 增加回到顶端按钮
 
 
 ###计划改善

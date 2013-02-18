@@ -4,11 +4,13 @@
 为了在手机上同步github上的博客内容，努力的寻找android上的git客户端，
 首先发现：
 	
-	Agit 只能看，不提交，没法用
+	Agit 
+	只能看，不提交，没法用
 
 通过国外的论坛，发现
 	
-	Terminal IDE 支持git的pull、push、commit
+	Terminal IDE 
+	支持git的pull、push、commit
 
 可能是版本问题一直配置不对，今天终于pull、push了，记录一下：
 
@@ -51,8 +53,10 @@
 
 另，因为terminal 下的git命令不全，没有git-merge命令，如果出现冲突，pull命令就异常
 
-有文章使用下方法：
+有文章使用下方法，经验证是正确滴：
 	
-	可能git某些操作的时候会有错误，因为有软链接缺失，看什么错误，到“system/bin/”下执行类似“ln -s git git-merge”的命令就可以
+	可能git某些操作的时候会有错误，因为有软链接缺失，看什么错误，到“system/bin/”下执行类似
+	ln -s git git-merge
+	的命令就可以
 
 

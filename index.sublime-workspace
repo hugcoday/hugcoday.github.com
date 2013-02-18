@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"pad",
+				"padding-bottom"
+			],
+			[
 				"for",
 				"for	for (…) {…}"
 			],
@@ -48,10 +52,6 @@
 				"function"
 			],
 			[
-				"pad",
-				"padding-left"
-			],
-			[
 				"bor",
 				"border-top"
 			],
@@ -64,66 +64,10 @@
 	"buffers":
 	[
 		{
-			"file": "js/blog.js",
-			"settings":
-			{
-				"buffer_size": 10827,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "js/underscore-min.js",
-			"settings":
-			{
-				"buffer_size": 15548,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 4897,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "<div class=\"span12\"><div class=\"pagination\"><ul><li class=\"prev previous_page disabled\"><a href=\"#\">← 上一页</a></li> <li class=\"active\"><a rel=\"start\" href=\"/?page=1\">1</a></li> <li><a rel=\"next\" href=\"/?page=2\">2</a></li> <li><a href=\"/?page=3\">3</a></li> <li><a href=\"/?page=4\">4</a></li> <li><a href=\"/?page=5\">5</a></li> <li class=\"disabled\"><a href=\"#\"><span class=\"gap\">…</span></a></li> <li><a href=\"/?page=99\">99</a></li> <li><a href=\"/?page=100\">100</a></li> <li class=\"next next_page \"><a rel=\"next\" href=\"/?page=2\">下一页 →</a></li></ul></div></div>",
-			"settings":
-			{
-				"buffer_size": 555,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "post/2013-02-08-javascript-math.md",
-			"settings":
-			{
-				"buffer_size": 175,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "css/default.css",
-			"settings":
-			{
-				"buffer_size": 1459,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "css/skin.css",
-			"settings":
-			{
-				"buffer_size": 1875,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "css/bootstrap.min.css",
-			"settings":
-			{
-				"buffer_size": 81150,
+				"buffer_size": 4845,
 				"line_ending": "Unix"
 			}
 		}
@@ -260,19 +204,24 @@
 	},
 	"file_history":
 	[
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2013-02-14-android-git.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/js/blog.js",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/js/underscore-min.js",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/index.html",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2013-02-08-javascript-math.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/css/default.css",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/css/skin.css",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/css/bootstrap.min.css",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-12-26-test.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/index.json",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/README.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/js/backbone.js",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2013-02-04-enlai.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2013-02-02-friend.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/index.json",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/js/backbone-min.js",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/js/underscore-min.js",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/js/mustache.min.js",
 		"/D/04TOOLS/Portable/Sublime Text 2.0.1/Data/Packages/GBK Encoding Support/tmp/jquery.min.js                F%3A%5CPHPnow-1.5.6%5Chtdocs%5Cdizhou%5Cjs%5Cjquery.min.js",
 		"/D/TOOLS/Portable/Sublime Text 2.0.1/Data/Packages/GBK Encoding Support/tmp/jquery.min.js                F%3A%5CPHPnow-1.5.6%5Chtdocs%5Cdizhou%5Cjs%5Cjquery.min.js",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/js/blog.js",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/README.md",
 		"/D/东软项目/新员工--技术培训/TRP代码生成/单表代码生成/获取字段.txt",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2013-01-08-cloud-foundry.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2013-01-06-duoshuo.md",
@@ -284,7 +233,6 @@
 		"/E/Program Files/Foxmail 7.0/Info/Readme_CH.txt",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/tech/2013-01-06-13things.md",
 		"/C/Users/di.zhou/AppData/Local/Temp/HZ$D.847.3426/HZ$D.847.3427/Markdown-Syntax-CN/syntax.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-12-26-test.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/index2.html",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-12-31-sublime-text-key.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/CNAME",
@@ -294,7 +242,6 @@
 		"/F/PHPnow-1.5.6/新建文件夹/buildIndex.bat",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/index.md",
 		"/E/TDDOWNLOAD/lvkun.github.com-master/lvkun.github.com-master/js/staticblog.js",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/css/skin.css",
 		"/F/PHPnow-1.5.6/htdocs/_netrc",
 		"/F/PHPnow-1.5.6/htdocs/1.bat",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/file/_netrc",
@@ -316,7 +263,6 @@
 		"/C/Users/di.zhou/AppData/Local/Temp/HZ$D.335.3264/HZ$D.335.3266/xiaotiantian-master/README.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/buildIndex.bat",
 		"/E/TDDOWNLOAD/lvkun.github.com-master/lvkun.github.com-master/README.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/css/default.css",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/README.MD",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/README",
 		"/E/TDDOWNLOAD/lvkun.github.com-master/lvkun.github.com-master/index.html",
@@ -325,7 +271,6 @@
 		"/C/Users/di.zhou/AppData/Local/Temp/HZ$D.262.4248/HZ$D.262.4250/highlight.js/classref.txt",
 		"/E/TDDOWNLOAD/prettify-1-Jun-2011/google-code-prettify/tests/prettify_test_2.html",
 		"/E/TDDOWNLOAD/prettify-1-Jun-2011/google-code-prettify/styles/index.html",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/css/bootstrap.min.css",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/css/bootstrap-responsive.min.css",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/js/meta.js",
 		"/D/engine.log",
@@ -387,6 +332,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"make_main_index",
+			"addDiscuz",
+			"build_sidebar_model",
+			"#!",
+			"!",
+			"addpages",
 			"article-content",
 			"dd",
 			"            \n",
@@ -465,75 +416,18 @@
 			[
 				{
 					"buffer": 0,
-					"file": "js/blog.js",
-					"settings":
-					{
-						"buffer_size": 10827,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8657,
-								8657
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 5826.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "js/underscore-min.js",
-					"settings":
-					{
-						"buffer_size": 15548,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2623,
-								2626
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1249.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 4897,
+						"buffer_size": 4845,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3280,
-								3280
+								401,
+								401
 							]
 						],
 						"settings":
@@ -544,143 +438,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"settings":
-					{
-						"buffer_size": 555,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								48,
-								114
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "post/2013-02-08-javascript-math.md",
-					"settings":
-					{
-						"buffer_size": 175,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								24,
-								24
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "css/default.css",
-					"settings":
-					{
-						"buffer_size": 1459,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								244,
-								244
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "css/skin.css",
-					"settings":
-					{
-						"buffer_size": 1875,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								473,
-								473
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "css/bootstrap.min.css",
-					"settings":
-					{
-						"buffer_size": 81150,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 57.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

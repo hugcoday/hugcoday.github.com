@@ -6,7 +6,16 @@ $(function() {
         cache: false
     });
 
- 
+    $.scrollUp({
+        scrollName: 'scrollUp', // Element ID
+        topDistance: '100', // Distance from top before showing element (px)
+        topSpeed: 300, // Speed back to top (ms)
+        animation: 'fade', // Fade, slide, none
+        animationInSpeed: 200, // Animation in speed (ms)
+        animationOutSpeed: 200, // Animation out speed (ms)
+        scrollText: 'Top', // Text for element
+        activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+    });
 	//ceshi
  
     var blog = {};
@@ -103,7 +112,7 @@ $(function() {
         
         var el = document.createElement('div');//该div不需要设置class="ds-thread"
         el.setAttribute('data-thread-key', file);//必选参数
-        el.setAttribute('data-url', host+file);//必选参数
+        el.setAttribute('data-url', file);//必选参数
         el.setAttribute('data-title', title);//必选参数
         
         el.setAttribute('data-author-key', 'hugcoday@gmail.com');//可选参数
@@ -163,7 +172,7 @@ $(function() {
     }
 
     
-    var curPageNum = 1;
+  
 
   
 
@@ -182,7 +191,7 @@ $(function() {
         },
         render:function(){
             var html = Mustache.to_html(this.template, this.model);
-          //  alert(dd);
+           
             $(this.el).append(html);
             return this;
         }
@@ -287,8 +296,8 @@ $(function() {
                 curIndex = 0;
                 hasShowedNum = 0;
                 loadingIndex = true;
-
-                blog.views.make_main_index(this.cate,this.data.articles);
+                 
+                blog.views.make_main_index(this.cate,this.data.articles,this.pagenum);
 
 
                 //页码工具条
@@ -320,17 +329,35 @@ $(function() {
     var curIndex = 0;
     var hasShowedNum = 0;
     var loadingIndex = false;
+    var curCate ;
+    var curArticles;
+    var curPageNum = 1;
+    var showArticleNum = 10;
+
     //首页展示
-    blog.views.make_main_index = function addIndex(cate,articles,num) {
+    blog.views.make_main_index = function addIndex(cate,articles,pagenum) {
+
+        this.curCate = cate;
+        this.curArticles = articles;
 
         if(loadingIndex){
             
             if(cate !=null && articles[curIndex].cate !=cate) {
+                //总索引
                 curIndex++;
+                
+                //分页计数
+                if(hasShowedNum<showArticleNum*(curPageNum-1)){
+                    hasShowedNum ++;
+                    return;
+                }
+
+                //显示文章计数
                 if(curIndex < articles.length && hasShowedNum < 10) {
                     hasShowedNum ++;
                     addIndex(cate,articles);
                 }
+
                 return;
             }
 
@@ -368,26 +395,27 @@ $(function() {
             "show/:article": "show",
             "page/:num":"page"
         },
-        make_main_view: function(cate, article) {
+        make_main_view: function(cate, article,pagenum) {
             if(!this.main) {
                 this.main = new blog.views.Main();
             }
             this.main.cate = cate;
             this.main.article = article;
+            this.main.pagenum = pagenum
             this.main.render();
         },
         index: function() {
-            this.make_main_view(null, 'index');
+            this.make_main_view(null, 'index',1);
             
         },
         cate: function(cate) {
-            this.make_main_view(cate, 'index');
+            this.make_main_view(cate, 'index',1);
         },
         show: function(article) {
-            this.make_main_view(null, article);
+            this.make_main_view(null, article,1);
         },
         page: function(num){
-            this.add
+            this.make_main_view(cate,'index',num);
         }
     });
 

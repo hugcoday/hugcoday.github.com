@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"mak",
+				"make_main_index"
+			],
+			[
+				"cur",
+				"curPageNum"
+			],
+			[
 				"pad",
 				"padding-bottom"
 			],
@@ -64,10 +72,10 @@
 	"buffers":
 	[
 		{
-			"file": "index.html",
+			"file": "js/blog.js",
 			"settings":
 			{
-				"buffer_size": 4845,
+				"buffer_size": 12002,
 				"line_ending": "Unix"
 			}
 		}
@@ -204,17 +212,19 @@
 	},
 	"file_history":
 	[
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/index.json",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/index.html",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/css/skin.css",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2013-02-14-android-git.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/README.md",
+		"/F/PHPnow-1.5.6/htdocs/dizhou/js/jquery.scrollUp.min.js",
+		"/C/Users/Administrator/AppData/Local/Temp/HZ$D.167.3533/jquery.scrollUp.min.js",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/js/blog.js",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/js/underscore-min.js",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/index.html",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2013-02-08-javascript-math.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/css/default.css",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/css/skin.css",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/css/bootstrap.min.css",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2012-12-26-test.md",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/post/index.json",
-		"/F/PHPnow-1.5.6/htdocs/dizhou/README.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/js/backbone.js",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2013-02-04-enlai.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2013-02-02-friend.md",
@@ -332,6 +342,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"alert",
+			"curPageNum",
 			"make_main_index",
 			"addDiscuz",
 			"build_sidebar_model",
@@ -416,29 +428,29 @@
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
+					"file": "js/blog.js",
 					"settings":
 					{
-						"buffer_size": 4845,
+						"buffer_size": 12002,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								401,
-								401
+								3932,
+								3932
 							]
 						],
 						"settings":
 						{
 							"origin_encoding": "UTF-8",
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 57.0,
+						"translation.y": 2160.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

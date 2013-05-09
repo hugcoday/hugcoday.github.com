@@ -70,8 +70,7 @@
                 <footer role="contentinfo">
                 <p>&copy; {{copyright}} Powered by <a
                     href="https://github.com/hugcoday/hugcoday.github.com" target="_blank">多多de棉花糖</a>
-                Base on <a
-                    href="https://github.com/onlytiancai/xiaotiantian" target="_blank">小天天博客</a>  </p>
+                 </p>
                 </footer>
             </div><!--/.fluid-container-->
         </script>
@@ -93,12 +92,12 @@
                 <div class="span12">
                     <div class="pagination">
                         <ul>
-                            <li class="prev previous_page "><a href="#page/{{num_up}}">← 上一页</a></li> 
+                            <li class="prev previous_page "><a href="#page/{{num_up}}">← </a></li> 
                             {{#pages}}
                                 <li ><a href="#page/{{num}}">{{num}}</a></li>
                             {{/pages}}
                            
-                            <li class="next next_page "><a rel="next" href="#page/{{num_next}}">下一页 →</a></li>
+                            <li class="next next_page "><a rel="next" href="#page/{{num_next}}"> →</a></li>
                            
                         </ul>
                     </div>
@@ -107,6 +106,39 @@
           
         </script>
 
+        <script id="tpl-duoshuo" type="text/template">
+        
+            <h3>
+                最新评论
+            </h3>
+            <ul id="ds-recent-comments" data-show-title="0" data-excerpt-length="70"
+            data-num-items="10">
+                {{#messages}}
+                <li class="ds-comment ds-show-avatars" data-post-id="{{data-post-id}}">
+                    <div class="ds-avatar">
+                        <a rel="nofollow author" target="_blank" href="{{author_url}}"
+                        title="{{author_name}}">
+                            <img src="{{avatar_url}}" alt="{{author_name}}"
+                            style="width:32px;height:32px">
+                        </a>
+                    </div>
+                    <div class="ds-meta">
+                        <a rel="nofollow author" target="_blank" href="{{author_url}}">
+                            {{author_name}}
+                        </a>
+                        <span class="ds-time" datetime="{{created_at}}" title="">
+                             
+                        </span>
+                    </div>
+                    <a class="ds-excerpt" title="Redirect 中的评论" href="#show/{{thread_key}}">
+                        {{message}}
+                    </a>
+                </li>
+                 {{/messages}}
+              
+            </ul>
+        
+        </script>
 
 
         
@@ -124,7 +156,7 @@
         <script src="js/json2.js"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/underscore-min.js"></script>
-        <script src="js/backbone-min.js"></script>
+        <script src="js/backbone.js"></script>
         <script src="js/mustache.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/showdown-min.js"></script>

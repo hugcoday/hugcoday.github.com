@@ -1,0 +1,30 @@
+<div class="well sidebar-comment">
+    <h3>
+        最新评论
+    </h3>
+    <ul id="ds-recent-comments" data-show-title="0" data-excerpt-length="70"
+    data-num-items="10">
+        
+        <li class="ds-comment ds-show-avatars" data-post-id="{{data-post-id}}">
+            <div class="ds-avatar">
+                <a rel="nofollow author" target="_blank" href="{{author_url}}"
+                title="{{author_name}}">
+                    <img src="{{avatar_url}}" alt="{{author_name}}"
+                    style="width:32px;height:32px">
+                </a>
+            </div>
+            <div class="ds-meta">
+                <a rel="nofollow author" target="_blank" href="{{author_url}}">
+                    {{author_name}}
+                </a>
+                <span class="ds-time" datetime="{{created_at}}" title="2013年2月1日 13:33:29">
+                    2月1日
+                </span>
+            </div>
+            <a class="ds-excerpt" title="Redirect 中的评论" href="#show/{{thread_key}}">
+                {{message}}
+            </a>
+        </li>
+      
+    </ul>
+</div>

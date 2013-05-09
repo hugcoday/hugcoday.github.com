@@ -92,6 +92,22 @@ $(function() {
 
     }
 
+    //修改多说最近评论
+    blog.helper.build_sidebar_duoshuo = function(data){
+        var result = {};
+        var messages = [];
+        alert(data);
+        for(var i = 0;i<=data.length;i++){
+            var message = data[i];
+            messages[i] = {"data-post-id":message.post_id,"author_url":message.author_url,"author_name":message.author_name,
+                            "avatar_url":message.author.avatar_url,"created_at":message.created_at,
+                            "thread_key":message.thread_key,"message":message.thread.message};
+        }
+
+        result.messages=messages;
+        return result;
+    }
+
     // 获取当前地址
     blog.helper.getHost = function(url) {
             var host = "null";
@@ -143,6 +159,7 @@ $(function() {
 
         
         DUOSHUO.RecentComments(el);
+    
         _div.append(el);
  
        
@@ -238,14 +255,17 @@ $(function() {
             blog.helper.highlight();
         }
     });
-
+    
+   
 
     blog.views.Main = Backbone.View.extend({
         el: $('.main-body'),
         template: $('#tpl-main').html(),
         initialize: function() {
+            
             _.bindAll(this, 'render');
             _.bindAll(this, 'sync');
+             
         },
         sync: function() {
             var that = this;
@@ -253,7 +273,10 @@ $(function() {
                 that.data = data;
                 that.render();
             });
-        },
+
+            
+        } ,
+        
         render: function() {
             if(!this.data) {
                 this.sync();
@@ -272,6 +295,7 @@ $(function() {
             this.$(".sidebar-nav").empty().append(sidebar_view.render().el);
 
             
+           
 
 
             if(this.cate) {
@@ -414,10 +438,13 @@ $(function() {
             if(!this.main) {
                 this.main = new blog.views.Main();
             }
+             
             this.main.cate = cate;
             this.main.article = article;
             this.main.pagenum = pagenum
             this.main.render();
+           
+             
         },
         index: function() {
             this.make_main_view(null, 'index',1);

@@ -67,7 +67,7 @@ $(function() {
     };
 
     // 增加分页条
-    blog.helper.build_pagebar_model = function(data,cate){
+    blog.helper.build_pagebar_model = function(data,cate,pagenum){
         var result = {};
         var articles = data.articles;
         if(cate) {
@@ -81,7 +81,12 @@ $(function() {
 
             pages[i] = {"num":i} ; 
         };
+
         result.pages = pages;
+
+        result.num_up = pagenum-1<=0?1:pagenum-1;
+
+        result.num_next = parseInt(pagenum)+1>pagecounts?pagecounts:parseInt(pagenum)+1;
         
         return result;
 
@@ -132,6 +137,7 @@ $(function() {
 
         var el = document.createElement('ul'); 
         el.setAttribute('data-num-items', "10");
+        
         el.setAttribute('data-excerpt-length',"70"); 
         el.setAttribute('data-show-title', "0"); 
 
@@ -301,7 +307,7 @@ $(function() {
 
 
                 //页码工具条
-                var pagebar_model = blog.helper.build_pagebar_model(this.data, this.cate);
+                var pagebar_model = blog.helper.build_pagebar_model(this.data, this.cate,this.pagenum);
                 
                 var pagebar_view = new blog.views.Pagebar({
                     model: pagebar_model
@@ -342,24 +348,22 @@ $(function() {
 
         if(loadingIndex){
             
-            if(cate !=null && articles[curIndex].cate !=cate) {
-                //总索引
-                curIndex++;
+             
                 
-                //分页计数
-                if(hasShowedNum<showArticleNum*(curPageNum-1)){
-                    hasShowedNum ++;
-                    return;
-                }
+                
+                
 
-                //显示文章计数
-                if(curIndex < articles.length && hasShowedNum < 10) {
-                    hasShowedNum ++;
-                    addIndex(cate,articles);
-                }
-
-                return;
+            if(curIndex<showArticleNum*(pagenum-1)){
+                curIndex = showArticleNum*(pagenum-1);
             }
+
+            if(curIndex >= articles.length){
+                return ;
+            }
+
+                
+               
+
 
             $.get("post/" + articles[curIndex].file + ".md", function(artData) {
 
@@ -378,13 +382,24 @@ $(function() {
                 $(".article-content").append("<p><a title=\"\" class=\"btn btn-primary pull-left\" href=\"#show/" + articles[curIndex].file + "\"  onclick=\"\">继续阅读  →</a> </p><br/> <br/>");
                 $(".article-content").append("<div class=\"line_dashed\"></div>");
                 
-                curIndex++;
+               /* curIndex++;
                 if(curIndex < articles.length && curIndex < 10) {
                     addIndex(cate,articles);
+                }*/
+                //总索引
+                curIndex++;
+                 //显示文章计数
+                if(curIndex < articles.length && hasShowedNum < 10) {
+                    hasShowedNum ++;
+                    addIndex(cate,articles);
                 }
-                 
+                
 
             });
+
+
+
+                 
         }
     }
 
@@ -415,7 +430,7 @@ $(function() {
             this.make_main_view(null, article,1);
         },
         page: function(num){
-            this.make_main_view(cate,'index',num);
+            this.make_main_view(null,'index',num);
         }
     });
 

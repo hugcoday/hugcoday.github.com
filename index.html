@@ -93,12 +93,12 @@
                 <div class="span12">
                     <div class="pagination">
                         <ul>
-                            <li class="prev previous_page "><a href="#">← 上一页</a></li> 
+                            <li class="prev previous_page "><a href="#page/{{num_up}}">← 上一页</a></li> 
                             {{#pages}}
                                 <li ><a href="#page/{{num}}">{{num}}</a></li>
                             {{/pages}}
                            
-                            <li class="next next_page "><a rel="next" href="/?page=2">下一页 →</a></li>
+                            <li class="next next_page "><a rel="next" href="#page/{{num_next}}">下一页 →</a></li>
                            
                         </ul>
                     </div>

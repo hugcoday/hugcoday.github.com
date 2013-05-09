@@ -7,6 +7,8 @@
         {"name": "other", "text":"其它"}
     ],
     "articles":[
+        {"title": "PPT Plex", "file": "2013-04-17-pptplex", "cate":"tech"},
+        {"title": "企业架构", "file": "2013-04-17-ea", "cate":"tech"},
         {"title": "Android上使用git", "file": "2013-02-14-android-git", "cate":"tech"},
         {"title": "JavaScript取整数", "file": "2013-02-08-javascript-math", "cate":"tech"},
         {"title": "恩来语录", "file": "2013-02-04-enlai", "cate":"life"},

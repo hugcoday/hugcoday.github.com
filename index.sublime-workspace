@@ -72,11 +72,55 @@
 	"buffers":
 	[
 		{
+			"contents": "$(function() {\n    $('body').ajaxError(function(event, request, settings, err) {\n        console.log(event);\n    });\n    $.ajaxSetup({\n        cache: false\n    });\n\n    $.scrollUp({\n        scrollName: 'scrollUp', // Element ID\n        topDistance: '100', // Distance from top before showing element (px)\n        topSpeed: 300, // Speed back to top (ms)\n        animation: 'fade', // Fade, slide, none\n        animationInSpeed: 200, // Animation in speed (ms)\n        animationOutSpeed: 200, // Animation out speed (ms)\n        scrollText: 'Top', // Text for element\n        activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'\n    });\n	//ceshi\n \n    var blog = {};\n    blog.views = {};\n    blog.helper = {};\n \n\n    blog.helper.build_main_model = function(data) {\n        var result = {};\n        document.title = data.site_name;\n        result.site_name = data.site_name;\n        result.copyright = data.copyright;\n        result.navlist = _.map(data.cates, function(cate) {\n            return {\n                link: '#cate/' + cate.name,\n                text: cate.text\n            };\n        });\n        return result;\n    };\n\n    blog.helper.build_sidebar_model = function(data, cate) {\n        var result = {};\n\n        var articles = data.articles;\n        if(cate) {\n            articles = _.filter(articles, function(article) {\n                return article.cate == cate;\n            });\n        }\n\n        result.months = _.groupBy(articles, function(article) {\n            return article.file.substring(0, 7);\n        });\n        \n        result.months = _.map(result.months, function(value, key) {\n            return {\n                month: key,\n                articles: _.map(value, function(article) {\n                    return {\n                        link: article.file,\n                        text: article.title\n                    }\n                })\n            };\n        });\n\n        return result;\n    };\n\n    // 增加分页条\n    blog.helper.build_pagebar_model = function(data,cate){\n        var result = {};\n        var articles = data.articles;\n        if(cate) {\n            articles = _.filter(articles, function(article) {\n                return article.cate == cate;\n            });\n        }\n        var pages = [];\n        var pagecounts = Math.ceil(articles.length/10);\n        for (var i = 1; i <= pagecounts; i++) {\n\n            pages[i] = {\"num\":i} ; \n        };\n        result.pages = pages;\n        \n        return result;\n\n    }\n\n    // 获取当前地址\n    blog.helper.getHost = function(url) {\n            var host = \"null\";\n            if(typeof url == \"undefined\"\n                            || null == url)\n                    url = window.location.href;\n            var regex = /.*\\:\\/\\/([^\\/]*).*/;\n            var match = url.match(regex);\n            if(typeof match != \"undefined\"\n                            && null != match)\n                    host = match[0];\n            var urls = url.split(\"#show/\");\n            host = urls[0]+'show/';\n            return host;\n    }\n    \n    // 转化引擎\n    blog.helper.markdown = new Showdown.converter();\n\n    // 增加多说评论\n    blog.helper.addDiscuz = function (_div,file,title){\n        var host = blog.helper.getHost();\n        \n        var el = document.createElement('div');//该div不需要设置class=\"ds-thread\"\n        el.setAttribute('data-thread-key', file);//必选参数\n        el.setAttribute('data-url', file);//必选参数\n        el.setAttribute('data-title', title);//必选参数\n        \n        el.setAttribute('data-author-key', 'hugcoday@gmail.com');//可选参数\n        DUOSHUO.EmbedThread(el);\n        _div.append(el);\n        \n         \n    }\n\n    // 评论列表\n\n    blog.helper.addDiscuzList = function(_div){\n\n        var _discuz_title = document.createElement('h3'); \n        _discuz_title.innerHTML=\"最新评论\";\n        _div.append(_discuz_title);\n\n        var el = document.createElement('ul'); \n        el.setAttribute('data-num-items', \"10\");\n        \n        el.setAttribute('data-excerpt-length',\"70\"); \n        el.setAttribute('data-show-title', \"0\"); \n\n        \n        DUOSHUO.RecentComments(el);\n        _div.append(el);\n \n       \n         \n    }\n\n    //近期访客\n    blog.helper.addDiscuzUsers = function(_div){\n\n        var _discuz_title = document.createElement('h3'); \n        _discuz_title.innerHTML=\"近期访客\";\n        _div.append(_discuz_title);\n\n        var el = document.createElement('ul'); \n        el.setAttribute('data-num-items', \"10\");\n        el.setAttribute('data-excerpt-length',\"70\"); \n        el.setAttribute('data-show-title', \"0\"); \n\n        \n        DUOSHUO.RecentVisitors(el);\n        _div.append(el);\n \n       \n         \n    }\n\n    blog.helper.addpages = function(index,articles,_div){\n        var el = document.createElement('ul'); \n        el.setAttribute('data-num-items', \"10\");\n        el.setAttribute('data-excerpt-length',\"70\"); \n        el.setAttribute('data-show-title', \"0\"); \n\n    }\n\n    \n  \n\n  \n\n    //代码高亮\n    blog.helper.highlight = function () {\n        return $('pre code').each(function(i, e) {\n            return hljs.highlightBlock(e, '    ');\n        });\n    }\n\n    blog.views.Pagebar = Backbone.View.extend({\n        template:$('#tpl-pagebar').html(),\n        initialize:function(options){\n            this.model = options.model;\n            _.bindAll(this,'render');\n        },\n        render:function(){\n            var html = Mustache.to_html(this.template, this.model);\n           \n            $(this.el).append(html);\n            return this;\n        }\n    })\n\n    blog.views.Sidebar = Backbone.View.extend({\n        template: $('#tpl-sidebar').html(),\n        initialize: function(options) {\n            this.model = options.model;\n            _.bindAll(this, 'render');\n        },\n        render: function() {\n            var html = Mustache.to_html(this.template, this.model);\n            $(this.el).append(html);\n            return this;\n        }\n    });\n\n\n\n    blog.views.Article = Backbone.View.extend({\n        initialize: function(options) {\n            var that = this;\n            this.article = options.article;\n\n            _.bindAll(this, 'render');\n            $.get('post/' + this.article + '.md', function(data) {\n                that.model = data;\n                that.render();\n            });\n\n        },\n        render: function() {\n            if(!this.model) return this;\n            var html = blog.helper.markdown.makeHtml(this.model);\n\n            $(this.el).html(html);\n            blog.helper.highlight();\n        }\n    });\n\n\n    blog.views.Main = Backbone.View.extend({\n        el: $('.main-body'),\n        template: $('#tpl-main').html(),\n        initialize: function() {\n            _.bindAll(this, 'render');\n            _.bindAll(this, 'sync');\n        },\n        sync: function() {\n            var that = this;\n            $.getJSON('post/index.json', function(data) {\n                that.data = data;\n                that.render();\n            });\n        },\n        render: function() {\n            if(!this.data) {\n                this.sync();\n                return this;\n            }\n            // 主页面\n            var main_model = blog.helper.build_main_model(this.data);\n            var main_html = Mustache.to_html(this.template, main_model);\n            $(this.el).empty().append(main_html);\n\n            //侧边栏\n            var sidebar_mode = blog.helper.build_sidebar_model(this.data, this.cate);\n            var sidebar_view = new blog.views.Sidebar({\n                model: sidebar_mode\n            });\n            this.$(\".sidebar-nav\").empty().append(sidebar_view.render().el);\n\n            \n\n\n            if(this.cate) {\n                loadingIndex = false;\n                this.$('.navbar-inner .nav li a[href=\"#cate/' + this.cate + '\"]').parent().addClass('active');\n            }\n\n            if(this.article!=\"index\") {\n\n                var article_view = new blog.views.Article({\n                    article: this.article\n                });\n                \n                loadingIndex = false;\n\n                this.$(\".article-content\").empty().append(article_view.render().el);\n                 \n                //添加评论\n                blog.helper.addDiscuz(this.$(\".article-content\"),this.article,\"\");\n               \n              \n                 \n            }\n\n\n            if(this.article == \"index\") {\n                this.$(\".article-content\").empty();\n                curIndex = 0;\n                hasShowedNum = 0;\n                loadingIndex = true;\n                 \n                blog.views.make_main_index(this.cate,this.data.articles,this.pagenum);\n\n\n                //页码工具条\n                var pagebar_model = blog.helper.build_pagebar_model(this.data, this.cate);\n                \n                var pagebar_view = new blog.views.Pagebar({\n                    model: pagebar_model\n                });\n               \n                this.$(\".pagebar\").empty().append(pagebar_view.render().el);\n\n                \n\n            }\n\n             // 添加评论列表\n            blog.helper.addDiscuzList(this.$(\".sidebar-comment\"));\n            blog.helper.addDiscuzUsers(this.$(\".sidebar-users\"));\n\n            \n        }\n    });\n\n \n\n\n    \n    //文章计数\n    var curIndex = 0;\n    var hasShowedNum = 0;\n    var loadingIndex = false;\n    var curCate ;\n    var curArticles;\n    var curPageNum = 1;\n    var showArticleNum = 10;\n\n    //首页展示\n    blog.views.make_main_index = function addIndex(cate,articles,pagenum) {\n\n        this.curCate = cate;\n        this.curArticles = articles;\n\n        if(loadingIndex){\n            \n            if(cate !=null && articles[curIndex].cate !=cate) {\n                //总索引\n                curIndex++;\n                \n                //分页计数\n                if(hasShowedNum<showArticleNum*(curPageNum-1)){\n                    hasShowedNum ++;\n                    return;\n                }\n\n                //显示文章计数\n                if(curIndex < articles.length && hasShowedNum < 10) {\n                    hasShowedNum ++;\n                    addIndex(cate,articles);\n                }\n\n                return;\n            }\n\n            $.get(\"post/\" + articles[curIndex].file + \".md\", function(artData) {\n\n                var html;\n                if(artData.length >= 200) {\n                    html = blog.helper.markdown.makeHtml(artData.substring(0, 200));\n\n                } else {\n                    html = blog.helper.markdown.makeHtml(artData);\n                }\n                \n                $(\".article-content\").append(html);\n\n                //添加继续阅读\n                $(\".article-content\").append(\"<br/>\");\n                $(\".article-content\").append(\"<p><a title=\\\"\\\" class=\\\"btn btn-primary pull-left\\\" href=\\\"#show/\" + articles[curIndex].file + \"\\\"  onclick=\\\"\\\">继续阅读  →</a> </p><br/> <br/>\");\n                $(\".article-content\").append(\"<div class=\\\"line_dashed\\\"></div>\");\n                \n                curIndex++;\n                if(curIndex < articles.length && curIndex < 10) {\n                    addIndex(cate,articles);\n                }\n                 \n\n            });\n        }\n    }\n\n    blog.App = Backbone.Router.extend({\n        routes: {\n            \"\": \"index\",\n            \"cate/:cate\": \"cate\",\n            \"show/:article\": \"show\",\n            \"page/:num\":\"page\"\n        },\n        make_main_view: function(cate, article,pagenum) {\n            if(!this.main) {\n                this.main = new blog.views.Main();\n            }\n            this.main.cate = cate;\n            this.main.article = article;\n            this.main.pagenum = pagenum\n            this.main.render();\n        },\n        index: function() {\n            this.make_main_view(null, 'index',1);\n            \n        },\n        cate: function(cate) {\n            this.make_main_view(cate, 'index',1);\n        },\n        show: function(article) {\n            this.make_main_view(null, article,1);\n        },\n        page: function(num){\n            this.make_main_view(cate,'index',num);\n        }\n    });\n\n    app = new blog.App();\n    Backbone.history.start();\n});",
 			"file": "js/blog.js",
+			"file_size": 12234,
+			"file_write_time": 130056403036923678,
 			"settings":
 			{
-				"buffer_size": 12002,
+				"buffer_size": 12011,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "ubuntu设置ip地址\n",
+			"settings":
+			{
+				"buffer_size": 13,
+				"line_ending": "Windows",
+				"name": "ubuntu设置ip地址"
+			}
+		},
+		{
+			"contents": "负责多维度分析统计全省业务运行情况，为业务决策提供原始依据	\n\n2、以统计视角分析成本、服务、绩效；成本涵盖排名、对标、指标明细、构成、对比、预算执行等分析，以及物流重点环节费用的专项分析，比如：车辆费用；零售户满意度直接体现物流生产的运行情况，所以服务必须涵盖零售户多角度满意度调查分析；绩效要体现对标以及重点指标专项分析	2、省局和市局通过对物流配送中心成本绩效指标及对标指标的年度、月度统计和分析，一是全局了解全省各市局的物流成本控制情况，二是分析本省物流费用与其它省的差距，本市费用与其它市的差距及分析差距产生的主要原因，从物流环节、变动（固定）成本、人财物费用三个角度，了解年度、月度物流成本的构成，分析物流成本和销量（收入）之间的关系，并分析成本异常增长；及时了解预算的执行进度，并与年度销售进度对比分析，评估预算执行进度的合理性	\"2、实现完成数据中心物流统计分析功能与物流管控系统界面集成；\n 提供订单全生命周期的数据支撑和必要的汇总、填报功能，配合数据中心开发实施单位完成相应模块的开发\n实现对全省物流作业相关人员（在编、外包）的管理。  建立在各市公司物流作业人员基础信息管理的基础上，形成全省物流从业人员的全局视图\n实现对全省物流基础资源（设备、车辆、容器、配件等）的基础信息、维护和使用情况的管理。  建立在各市公司物流基础资源管理的基础上，形成全省物流基础资源的全局视图\n实现对全省纸箱收集、处理情况的管理。  建立在各市公司纸箱管理的基础上，形成全省纸箱的全局视图\n实现对全省薄膜等物流易耗品使用情况的管理。  建立在各市公司薄膜管理的基础上，形成全省薄膜的全局视图\n实现对上述各类资源的统计、查询需求  建立在统一分类、统一编码和统一属性的基础上，形成全省行业物流资源的全局视图，以此为基础形成各类查询与统计应用\"	\"物流相关数据指标统计\n1、 设备指标\n（1）用电量（月度统计）\n（2）用水量（月度统计）\n2、仓储指标\n（1）日储存量、季度日均储存量\n（2）配送总量\n（3）不同区域卷烟配送量货销售量\n（4）仓储破损量\n（5）期末库存量（月度、季度）\n3、分拣指标\n（1）效率、人均分拣量\n（2）分拣设备有效作业率\n（3）分拣破损量\n（4）分拣差错量\n（5）送货指标\n（6）送货破损量\n（7）送货差错量\n（8）总送货里程\n4、客服指标\n（1）客户总数\n（2）送货时间间隔\n（3）送货及时率\n（4）客户投诉率\n（5）电子结算率\n5、设施情况\n（1）各个办公地点的面积（办公室、收货区、存储区、分拣区==）\n6、设备情况\n（1）仓库容量\n（2）托盘统计\n（3）叉车统计\n（4）自有车辆统计\n（5）分拣线分拣能力、信息资料\n（6）包装机数量统计\n（7）信息化管理应用情况\n（8）使用的系统、软件名称、供应商、具有核心功能\n人员与绩效管理\n1、部门人员管理（每月度的数量、考核）\n（1）岗位数量\n（2）学历情况\n（3）职称情况\n（4）物流师资格情况\n（5）绩效管理\n2、外包人员管理（每月度的数量、考核）\n（1）岗位数量\n（2）学历情况\n（3）职称情况\n（4）物流师资格情况\n（5）绩效管理\n预算费用管理\n 1、内容：部门预算目录、预算、每月实际费用、比重（分类、汇总）、余额等；\n 2、查询：每月、年度费用，同期对比\n 3、附表\n\n搬运费、移仓费、破损烟管理\n1、 搬运费：到货数量*基数+出库数量*基数+移仓数量*基数+分公司出库数量*基数+超出合同人数*基数\n2、移仓费：（移出车数+移入车数）*基数\n3、破损烟：分到货破损、仓储破损、分拣破损、送货破损，不得超过千分之0.1；\n4、查询：汇总合计、同期对比\n\"	\"省：\n1、行业对标分析  分析对比全省各项对标指标的全省先进，全省平均，行业先进，行业平均\n2、全省对标分析  分析对比各地州各项对标指标的全省先进，全省平均，行业先进，行业平均\n3、对标趋势分析  分析对比全省各项对标指标在一段时间内对比行业水平的变化\n4、绩效分析报告  编制全省关键绩效分析报告，并实现报告档案管理、分发、浏览\n5、费用分析报告  编制全省费用分析报告，并实现报告档案管理、分发、浏览\n6、服务－成本波士顿分析  从成本和服务两个维度对全省各地州进行波士顿分析\n7、成本因素分析  分析成本相关指标对各项成本的影响。\n8、准时性控制图  准时送货（送货效率等）\n\n地市：\n1、成本费用报告  采用图形化统计分析本市州公司物流成本费用报告，从成本费用分析、趋势分析、对比分析、构成因素分析等多个维度进行。\n2、物流对标报告  参照行业标准、全省标准，以物流各类指标进行对标，形成的报告\n3、定量指标季报表  物流成本费用报告，构成分析，成本费用指标分析，影响因素分析\"	\" 从成本、运营、能耗、服务及安全等关键指标进行全省行业范围内的综合对比分析、分布分析和趋势分析\n 从送货准时性、客户满意度、投诉率等关键指标对全省行业范围内的服务质量进行对比分析、分布分析、趋势分析和对标分析\n 从设备有效利用率、单箱耗材消耗、单箱用工等关键指标对全省行业范围内的物流资源进行对比分析\n 从单箱物流费用、单箱仓储分拣费用、单箱配送费用、单箱管理费用等关键指标对全省行业范围内的物流成本进行对比分析。支持对成本指标进行对比分析、趋势分析、构成分析和因素分析\n\"	\"查询分析\n  库存报表  以仓库为统计单元，出以卷烟厂为单位的品种类报表，包括商品代码、商品名称、数量、金额等信息\n  库存进销存报表  对仓库中出以营销的购进、销售和储存等数据生成的统计分析报表\n  库存预警  系统按设置的参数自动生成库存预警只读信息，提供的信息包括：仓库、商品代码、品名、总库存量、最高库存、最低库存、安全库存、实际库存和库存状态\n  库存总量预警  系统按设置的参数自动生成库存预警只读信息，提供公司名称、仓库、现有数量、仓库容量和状态（接近容量预警、正常容量、超容量预警）等信息\n  库龄预警  系统按设置的参数自动生成库龄预警只读信息，提供公司名称、仓库、储位、商品编码、数量、库龄、安全库龄、状态等信息\n\n\"		\"\n人力资源统计查询 按部门、班组、岗位查询人员编制情况和实际在岗人数，从用工性质、岗位分布、学历结构、年龄结构、职业资格结构等多个维度进行统计\n\n设施管理统计查询\n按部门、名称、房间号查询建筑设施，从面积、金额、时间、状态等多个维度进行统计；按类型、编号、品规查询货架货位，从类型、容积、状态、品规、数量等多个维度进行统计\n\n设备管理统计查询\n按部门、名称查询设备，从品牌、规格型号、时间、价格、状态等多个维度进行统计\n\n备件管理、容器管理、耗材管理\n统计查询 \n 期初库存\n 期末库存\n 实际库存\n 购置数量\n 领用数量\n 退库数量\n 报废数量\n\n车辆管理\n统计查询 \n 按部门、车牌查询车辆，从品牌、型号、车辆类型、时间、价格、里程、状态等多个维度进行统计\"\n									\n",
+			"file": "/D/01东软项目/08在案项目/06浙江/01业务设计/统计分析.txt",
+			"file_size": 8199,
+			"file_write_time": 130058843612929474,
+			"settings":
+			{
+				"buffer_size": 2897,
+				"line_ending": "Windows",
+				"name": "负责多维度分析统计全省业务运行情况，为业务决策提供原始依据	2、以统计视角分析成本、服务、绩效；成本"
+			}
+		},
+		{
+			"contents": "#企业架构\n##读书笔记\n\n最近研究学习架构理论，主要是TOGAF(The Open Group Archtechture Framework)\n\n软件=业务+架构+流程+组织\n\n	业务=协助企业规划\n	架构=架构远景+业务架构+信息系统架构+技术架构+机会与解决方案+迁移规划+实施治理+架构变更管理，核心是需求管理\n	流程=关注人和方法\n	组织=沟通 协调资源、规划资源使用\n\n\n##TOGAF®9.1 > 第二部分：架构开发方法（ADM） >第一阶段：业务架构\n\n###8. 阶段B：业务架构\n\n####本章内容\n\n8.1 目标 | 8.2 方法 | 8.3 输入 | 8.4 步骤 | 8.5输出\n\n本章介绍了业务架构，以支撑已确立的架构愿景。\n\n![业务架构](images/ea/b_bus.png)\n\n图8-1：阶段B：业务架构\n\n####8.1目标\n\n阶段B的目标是：\n\n* 制定目标业务架构，介绍企业需要如何操作实现企业目标，应对战略驱动在架构愿景的开始部分，并解决架构工作的要求和利益相关者的关注方式\n* 基于基线和目标业务架构之间的差距，识别候选蓝图组件\n\n####8.2方法\n\n综上所述，业务架构描述的产品和/或战略服务，组织，功能，流程，信息，地理方面的业务环境。\n\n#####8.2.1概述\n\n业务架构的知识是任何其他域（数据，应用，技术）架构工作的先决条件，因此，如果没有照顾已经在其他组织流程（企业规划，企业战略规划，业务流程再造工程，等），第一次架构活动的需要进行。\n\n在实际应用中，业务架构也常常需要展示的商业价值，随后的架构工作的关键利益相关者的一种手段，这些利益相关者的支持和参与在随后的工作中的投资回报率。\n\n阶段B的工作范围，将在很大程度上取决于对企业环境。 在某些情况下，业务架构的关键元素可能做其他活动，例如，企业的使命，愿景，战略和目标可能会记录一些更广泛的业务战略或企业的规划，有其自身的生命周期内的活动的一部分的企业。\n\n在这种情况下，有可能需要验证并更新当前记录的业务策略和计划，和/或高层次的业务驱动力，业务策略和目标之间的桥梁，一方面，和具体的业务需求有关这个架构的开发工作。 业务策略通常定义要实现什么 - 的目标和驱动程序，和成功的度量 - 但不是到那里怎么走。 这是业务架构的作用。\n\n在其他情况下，很少或根本没有业务架构工作可能已经完成日期。 在这种情况下，将架构团队需要研究，验证，并获得买入的关键业务目标和流程的架构是支持。 为此，可以作为一个独立的运动，无论是前面的体系结构的开发，或作为A相的一部分\n\n在这两种情况下， TOGAF ADM业务场景技术（见第三部分 ， 26。业务场景和业务目标 ），或任何其他方法，照亮关键的业务需求和IT架构表示隐含的技术要求，可能是使用。\n\n一个关键的目标是要尽可能使用现有的材料。 在架构上更加成熟的环境中，会有现有的架构定义，（希望）将一直保持自上​​次架构开发周期。 存在体系结构描述，这些可以作为一个起点和验证，并在必要时更新;见第五部分 ， 连续39.4.1架构 。\n\n收集和分析的信息，使相关的到这种架构工作的范围作出明智的决定。 如果专注于这方面的努力（可能是新的）业务流程的定义，那么B相必然涉及很多细致的工作。 如果焦点更多的是对其他领域（数据/信息，应用系统，基础设施），以支持基本上现有的业务架构的目标架构，那么它没有进入不必要的细节，重要的是要建立一个完整的画面在B相。\n\n8.2.2制定基准描述\n\n如果企业现有的体系结构描述，他们应该被用来作为基准描述的基础。 此输入可能已经被用于开发架构愿景的A相，甚至有可能足以本身基线描述。\n\n如果不存在这样的描述，信息将要聚集在手任何格式。\n\n发展目标架构的正常路径是自上而下的。 然而，在基准描述中，当前状态的分析，往往有许多工作要做自底向上的，特别是当存在很少或没有架构资产。 在这样的情况下，建筑师只是有记录的高层次的架构工作假设，这个过程是一个收集证据，以打开工作假设变成事实，直到收益递减规律的设置。\n\n不属于可结转的业务流程并无内在价值。 然而，在开发中可能需要其他架构领域，没有可结转仍可能有一个内在价值的建筑组件（原理，模型，标准和当前的库存），以及库存的基线说明为了理解的残余这些组件的值（如果有的话）。\n\n不管是什么方法，我们的目标应该是重新尽可能使用现有的材料，并收集和分析目标业务架构作出明智的决策信息，使。 没有进入不必要的细节，重要的是要建立一个完整的画面。\n\n8.2.3业务建模\n\n商业模式应该是合乎逻辑的扩展业务场景的架构愿景，这样的架构可以从高层次的业务需求映射到更详细的。\n\n可采用多种建模工具和技术，如果认为合适的（铭记上述警告不要进入不必要的细节）。 例如：\n\n活动模型 （也称为业务流程模型 ）描述了与企业的业务活动，的数据及/或活动（内部交流）之间交换信息的功能，和的数据和/或信息交换的范围以外的其他活动模型（外部交换）。 活动模型是分层的性质。 他们捕捉在业务流程执行的活动，这些活动的ICOMS（输入，控制，输出和使用的机制/资源）。 活动模型可以标注有明确的报表，业务规则，代表之间的关系ICOMS。 例如，业务规则可以指定谁可以做什么，在规定条件下，组合输入和控制的需要，以及由此产生的输出。 创建活动模式的一项技术是IDEF（集成计算机辅助制造（ICAM）的定义）建模技术。\n对象管理集团（OMG）已经开发了业务流程建模符号（BPMN），一个标准的业务流程建模，包括语言指定的业务流程，他们的任务/步骤，产生的文件。\n\n用例模型既可以描述业务流程或系统的功能，这取决于在建模工作的重点。 用例模型描述企业的业务流程方面的使用情况和相应的业务流程和组织参与者（个人，组织等）的演员。 用例模型中描述的用例图和用例规格。\n逻辑数据模型类模型是类似的。 A类模型描述的静态信息和信息之间的关系。 A类模型还介绍了信息的行为。 像许多其他机型，也可以被用来模拟各种级别的粒度。 根据模型的意图，一类模型可以代表业务域实体​​或系统的实现类。 一个业务域模型代表的关键业务信息（域类），它们的特性（属性），他们的行为（方法或操作）和关系（通常简称为多重，多少班通常参与的关系），基数（参与的关系描述必需的或可选的）。 产品规格进一步阐述和详细信息，不能在类图中表示。\n\n\n\n图8-2：UML类图\n所有三种类型的上述模型可以在统一建模语言（UML）表示，存在各种不同的工具用于生成这样的模型。\n\n某些行业特定于有关行业部门的建模技术。 例如，国防部门使用以下机型。 这些模型必须小心地使用业务流程中的位置和行为，特别是如果有远见的企业架构将改变。\n\n节点连接图描述位置（节点），它们之间的“需求线的”，交换的信息和特点。 可谓节点连接三个层次：概念，逻辑和物理。 每个需求线表示连接两个节点之间的信息传递某种需要。 一个节点可以代表一个角色（例如，CIO），组织单元，业务地点或设施，等等。 信息流的方向的箭头指示注明描述的数据或信息的特征 - 例如，它的内容，媒体，安全或分类水平，及时性，以及信息系统的互操作性要求。\n信息交换矩阵记录的企业架构的信息交换要求。 信息交换的要求表达横跨三个基本实体（活动，业务节点和它们的元素，和信息流）的关系，并重点的信息交换特性，如性能和安全性。 他们确定什么样的信息交流和谁在一起，为什么信息是必要的，以什么样的方式。\n虽然最初开发用于国防部门，这些模型都发现在其他的政府部门越来越多地使用，也可以考虑在非政府的环境中使用。\n\n8.2.4架构库\n\nB相的一部分，架构团队将需要考虑哪些相关的业务架构资源都可以从架构库（见第五部分 ， 41。架构库 ），特别是：\n\n有关组织的行业通用的商业模式。 这些都是“产业架构”，在企业连续。 他们被关押在架构库（见第五部分 ， 41.3参考图书馆 ）的参考图书馆。 例如：\n对象管理集团（OMG） - www.omg.org -有许多发展的商业模式相关的特定的垂直领域，如医疗保健，交通运输，金融，等垂直领域专责小组\n电信管理论坛（TMF） - www.tmforum.org -制定了详细的业务模式相关的电信行业。\n在不同国家的政府部门和机构授权使用，旨在促进跨部门的集成和互操作性的参考模型和框架。 一个例子是联邦企业架构业务参考模型，这是一个功能驱动的框架，描述联邦政府的独立执行机构的业务运作。\n常见的高层次的业务领域相关的商业模式。 例如：\n资源事件代理（REA）的商业模式最初是由美国密歇根州立大学的威廉·E·麦卡锡（参考www.msu.edu/user/mccarth4 ），主要会计系统建模。 它已被证明可用于更好地了解业务流程，它已经成为传统企业和电子商务系统框架的主要造型之一。\nSTEP（产品模型数据交换标准）框架关注的是产品设计和供应链的互通。 STEP是一个ISO标准（ISO 10303）。 STEP标准的实施已经导致一些大型的航空航天制造商，也已采取了在其他行业，需要有一个复杂的图形和处理数据，如建筑业。\nRosettaNet的- www.rosettanet.org -创建领先的公司在计算机，电子元件，半导体制造供应链是一个财团。 它的使命是开发了一套完整的标准的电子商务流程，这些供应链，并促进和支持他们的采纳和使用。\n企业特定的建筑块（流程组件，业务规则，工作描述等）。\n适用标准。\n8.3输入\n\n本节定义了输入阶段B。\n\n8.3.1企业外部的参考材料\n\n体系结构参考材料（见第四部分 ， 36.2.5架构库 ）\n8.3.2非建筑输入\n\n请求架构工作（见第四部分 ， 36.2.17请求架构工作 ）\n商业原则，业务目标和业务驱动力（见第四部分 ， 36.2.9商业原则，业务目标和业务驱动 ）\n能力评估（见第四部分 ， 36.2.10能力评估 ）\n通信计划（见36.2.12 第四部分 ， 沟通计划 ）\n8.3.3建筑输入\n\n组织企业架构模型（见第四部分 ， 36.2.16组织企业架构模型 ），包括：\n组织范围的影响\n成熟度评估，差距和解决方法\n架构团队（S）的角色和职责\n架构工作的约束\n预算要求\n治理和支持策略\n量身定制的架构框架（见36.2.21 第四部分 ， 量身定制的架构框架 ），包括：\n量身定制的架构方法\n量身定制的架构内容（可交付成果和文物）\n配置和部署工具\n核准建筑工作表（见第四部分 建筑工作 ， 表36.2.20 ）\n体系结构原则（见36.2.4 第四部分 ， 架构原则 ），包括经营原则，预先存在\n企业连续（见第五部分 ， 企业连续39。 ）\n架构库（见第四部分 ， 36.2.5架构库 ），包括：\n可重复使用的建筑块\n公开可用的参考模型\n具体组织参考模型\n组织的标准\n架构愿景（见36.2.8 第四部分 ， 架构愿景 ），包括：\n问题描述\n目标建筑工作的声明\n摘要视图\n商务案例（可选）\n精制关键的高层次的利益相关者的要求\n草案架构定义文件，包括（范围）：\n基线业务架构，版本0.1\n基线技术体系结构，版本0.1\n基线数据架构，版本0.1\n基本的应用程序体系结构，版本0.1\n目标业务架构，版本0.1\n面向对象技术架构，版本0.1\n目标数据架构，版本0.1\n目标应用架构，版本0.1\n8.4步骤\n\n相B中处理的细节的水平将取决于的总体体系结构工作的范围和目标。\n\n作为这种努力的一部分被引入新的业务流程在第一阶段B.现有的业务流程进行支持，可能已经在目标环境中充分定义在以前的建筑工作将需要详细定义，但是，如果没有，它们也将需要被定义在B阶段。\n\n阶段B中的步骤（见下文）的顺序以及它们正式开始并完成的时间应适应形势的手，在按照既定的架构治理。 尤其是，在这种情况下，确定是否是适当的进行基线或目标建筑发展第一，在第三部分 ， 19。 应用迭代ADM 。\n\n在这些步骤中的所有活动已经启动，必须关闭在完成业务架构步骤（见8.4.8完成业务架构 ）。 在这些步骤中生成的文件必须在创建架构定义文档步骤（见8.4.9创建体系结构定义文件 ）正式公布。\n\n在B相的步骤如下：\n\n8.4.1选择的参考模型，观点和工具\n8.4.2制定基线业务架构描述\n8.4.3发展目标业务架构描述\n8.4.4进行差距分析\n8.4.5定义候选路线图组件\n8.4.6决心在整个建筑设计景观的影响\n8.4.7进行正式的利益相关者的审查\n8.4.8完成业务架构\n8.4.9创建体系结构定义文件\n8.4.1选择的参考模​​型，观点和工具\n\n选择相关的业务架构从架构库资源（参考模型，模式等）的基础上的业务驱动，与利益相关者和关注。\n\n选择相关的业务架构观点（例如，经营，管理，财务），也就是说，那些利益相关方关注的是如何解决业务架构，使建筑师证明。\n\n确定适当的工具和技术，可用于采集，建模，分析，协会与所选的观点。 根据担保的复杂程度，这些可能包括简单的文档或电子表格，或更复杂的建模工具和技术，如活动模型，业务流程模型，用例模型，等\n\n8.4.1.1确定整个建模过程\n\n对于每一个观点，选择所需的模型，以支持所需的特定视图，使用选定的工具或方法。\n\n确保覆盖所有利益相关者的关注。 如果他们都没有，创建新的模型关注覆盖，或扩大现有模型（见8.2.3业务建模 ）。 发现和记录业务要求的业务场景是一个有用的技术，并且可以反复使用，在不同的细节水平的业务架构的层次分解。 第三部分 ， 26中描述的业务场景。 业务场景和业务目标 。\n\n活动模型，用例模型，类模型前面提到的技术，使一个组织的业务架构的定义。 在许多情况下，所有三种方法可以利用顺序逐步分解业务。\n\n结构分析 ：确定关键业务功能架构的范围内，这些功能映射到组织单位内的业务。\n使用情况分析 ：击穿演员和跨组织的企业级功能，允许在一个函数的演员进行识别和允许故障服务支持/提供该功能的能力。\n过程建模 ：通过过程建模的功能或业务服务的击穿允许的元素的过程中被识别，并允许较低级别的业务服务或功能的识别。\n分解所需的水平和严谨的因企业而异，以及在企业内部，建筑师应该考虑企业的目标，目标，范围和企业架构的努力，以确定的水平分解的目的。\n\n8.4.1.2确定所需的服务粒度级别，边界，与合同\n\nTOGAF内容框架区分业务和服务业务的功能。 商务服务的具体功能有明确定义的界限，明确管辖。 为了允许建筑师的灵活性，以在一个水平的粒度，是适当的和可管理的业务定义业务服务，功能划分如下：微级的功能，将具有明确定义的边界，但没有在此明确管辖。 同样，宏的业务功能可能会被明确管辖，但未必有明确定义的边界。\n\n业务架构的阶段，因此需要确定哪些架构的组成部分的功能​​和服务。 区分服务功能，通过明确定义的服务合同。 当基线架构正在开发中，它可能的情况下，不存在明确的合同，因此，它将在建筑师的自由裁量权，以确定是否有开发合同之前检查任何目标架构的优点。\n\n服务合同涵盖的业务/功能接口和技术/数据接口。 业务架构将定义服务合同业务/功能的水平，这将扩大在应用程序和技术架构相。\n\n业务服务的粒度应根据业务驱动，目标，目标和措施，这方面的业务。 细粒度服务，允许更密切的管理和测量（可以结合创建粗粒度的服务），但需要更大的努力，治理。 鉴定服务和定义他们的合同指引，可以发现在第三部分 ， 22。 使用TOGAF SOA的定义和治理 。\n\n8.4.1.3确定所需的目录业务积木\n\n目录捕获存货的核心资产业务。 目录是分层的性质和捕捉一个构建块的分解，分解在相关积木（例如，组织/演员）。\n\n目录形成的原料发展矩阵和意见，并作为投资组合管理业务的关键资源和IT能力。\n\n发展在业务架构应考虑以下目录：\n\n组织/演员目录\n驱动器/目标/目的目录\n角色目录\n商业服务/功能目录\n地点目录\n过程/事件/控制/产品目录\n合同/测量目录\n目录的结构是基于元模型实体的属性的定义，在第四部分 ， 34。 内容元模型 。\n\n8.4.1.4确定所需的矩阵\n\n矩阵显示相关的模型实体之间的核心关系。\n\n矩阵形成的原料发展的意见，并作为影响评估的关键资源，进行差距分析的一部分。\n\n内的商业建筑的发展，应考虑下面的矩阵：\n\n商务互动矩阵（组织和行动者之间的依赖性和通信）\n演员/角色矩阵（显示每个演员进行角色）\n矩阵的结构的基础上， 34 第IV部分中定义的元模型实体的属性。 内容元模型 。\n\n8.4.1.5确定所需的图表\n\n图提出不同的观点（观点）根据利益相关者的要求从一组业务架构信息。\n\n应考虑发展在业务架构如下图：\n\n业务足迹图\n商务服务/信息图\n功能分解图\n目标/目的/服务图\n用例图\n组织分解图\n工艺流程图\n活动图\n基于属性的定义，在第四部分 ， 34元模型实体的结构图。 内容元模型 。\n\n8.4.1.6确定类型的要求收集\n\n一旦已开发的业务架构目录，矩阵和图表，建筑建模完成正式实施目标架构业务为重点的要求。\n\n这些要求可能：\n\n相关业务领域\n规定输入到数据，应用程序和技术架构\n要体现在设计和实施提供了详细的指导，以确保解决方案解决了原有的建筑要求\n在这一步中，建筑师应识别架构应满足（见17.2.2要求发展 ）的要求。\n\n在许多情况下，体系结构定义将不打算给详细或全面的解决方案（因为这些都可以得到更好的解决，通过一般要求管理学科）的要求。 预期范围的要求内容应建立在架构愿景阶段，并记录在经批准的建筑工作表。\n\n任何规定或改变建筑工作表中定义的范围之外的要求，必须提交需求库管理，通过治理的需求管理过程。\n\n8.4.2制定基线业务架构描述\n\n制定一个基线说明现有的业务架构，以在必要范围内，以支持目标业务架构。 被定义范围和详细程度将依赖于现有的商业元素在何种程度上有可能进行目标业务架构，体系结构描述是否存在，如8.2方法 。 要尽可能找出相关业务架构添砖加瓦，借鉴架构库（见第五部分 ， 41。架构库 ）。\n\n哪里需要开发新的架构模式，以满足利益相关者的关注，使用在步骤1中确定的模型，作为创建新的架构内容描述低档架构的指导方针。\n\n8.4.3发展目标业务架构描述\n\n制定一个目标描述的业务架构，以必要的范围内，支持架构愿景。 范围和详细程度来定义业务元素的相关性达到目标架构愿景，将取决于是否存在建筑描述。 要尽可能找出相关业务架构添砖加瓦，借鉴架构库（见第五部分 ， 41。架构库 ）。\n\n哪里需要开发新的架构模式，以满足利益相关者的关注，使用在步骤1中确定的模型，作为创建新的架构内容描述的目标体系结构的指导方针。\n\n8.4.4进行差距分析\n\n验证的架构模型内部的一致性和准确性：\n\n进行权衡分析，解决冲突之间的不同意见（如有）\n验证，该模型支持的原则，目标和约束\n注意变化的观点表示在选定的模型架构库和文档\n对要求的完整性测试架构模型\n确定基线和目标之间的差距，使用差距分析技术的第三部分 ， 27所描述的。 差距分析 。\n\n8.4.5定义候选路线图组件\n\n创建基线架构，目标架构和差距分析结果，业务路线图，需要优先考虑在未来阶段的活动。\n\n这个初始业务架构路线图将用于为原料的综合，跨学科内的机遇和解决方案阶段的路线图以支持更详细的定义。\n\n8.4.6决心在整个建筑设计景观的影响\n\n一旦落实业务架构，它是有必要了解任何更广泛的影响或影响。\n\n在这个阶段，其他建筑文物建筑景观应进行检查，以确定：\n\n此业务架构创建任何预先存在的架构产生影响呢？\n最近的变化，影响业务架构？\n是否有任何机会，从这个业务架构利用工作在其他领域的组织？\n此业务架构是否影响其他项目（包括计划以及那些目前在建）？\n此业务架构的其他项目（包括计划以及那些目前在建）的影响？\n8.4.7进行正式的利益相关者的审查\n\n检查原动机的建筑项目，并声明反对拟议业务架构的架构工作，问是否有适合支持其他架构领域的后续工作的目的。 仅在必要时缩小拟议的业务架构。\n\n8.4.8完成业务架构\n\n选择标准为每个积木，再利用尽可能多地从参考模型的硬件架构存储库选自\n完整地记录每个积木\n最后进行交叉检查的总体架构与业务目标;文档架构文档积木决定的理由\n文件最终要求的可追溯性报告\n文件最终映射架构库的架构内，从选定的积木，找出那些可能会被重新使用（工作实践，角色，业务关系，工作内容等），并通过架构库发布\n完成所有的工作产品，如差距分析结果\n8.4.9创建体系结构定义文件\n\n文档架构定义文件积木决定的理由\n准备架构定义文件，包括部分或全部的业务部分：\n一个企业足迹（一个高层次的描述的人与关键业务功能和涉及的地点）\n业务功能的详细描述和他们的信息需求\n一个管理足迹（显示控制和问责跨度）\n工作实践，立法，财政措施等的标准，规则和指导方针\n一个技能矩阵和一套工作描述\n如果合适，使用报告和/或生成的图形建模工具来展示架构的关键意见。 将文档以供审阅有关的利益相关者，并纳入反馈。\n\n8.5输出\n\n的B相的输出可以包括，但不局限于：\n\n完善和更新版本的架构愿景阶段成果，如适用，包括：\n建筑工作的声明（见第四部分 ， 表36.2.20建筑工作 ），在必要时更新\n验证的经营方针，业务目标和业务驱动力（见第四部分 ， 36.2.9商业原则，业务目标和业务驱动 ），在必要时更新\n体系结构原则（见36.2.4 第四部分 ， 架构原则 ）\n架构定义文件草案（见36.2.3 第四部分 ， 体系结构定义文件 ），包括：\n基线业务架构，1.0版（详细），如果合适\n目标业务架构1.0版（详细），其中包括：\n组织结构 - 确定业务地点和相关组织单位\n业务目标 - 为企业和每个组织单位\n商务功能 - 一个详细的，主要功能区涉及逐次分解成子功能的递归步骤\n商务服务 - 企业和各企业单位向客户提供的服务，包括内部和外部\n业务流程，包括措施和交付\n业务角色，包括制定和修改的技能要求\n业务数据模型\n相关组织和职能 - 矩阵报表的形式组织单位相关的业务功能\n对应到选定的观点解决关键利益相关者的关注\n草案架构要求规范（见36.2.6 第四部分 ， 架构要求规范 ），包括业务架构要求：\n差距分析结果\n技术要求 - 吞吐量，分类和优先次序的工作在其它体系结构域的影响，例如，由一个相依性/优先级矩阵（例如，指导事务处理速度和安全性之间的权衡）;列表中的具体型号，预期可产生（例如，表示为原语Zachman框架）\n更新后的业务需求\n业务架构组件的架构蓝图（见第四部分 ， 36.2.7架构路线图 ）\n的输出可包括以下内容的部分或全部：\n\n目录：\n组织/演员目录\n驱动器/目标/目的目录\n角色目录\n商业服务/功能目录\n地点目录\n过程/事件/控制/产品目录\n合同/测量目录\n矩阵：\n商业互动矩阵\n演员/角色基质的\n图表：\n业务足迹图\n商务服务/信息图\n功能分解图\n产品生命周期图\n目标/目的/服务图\n用例图\n组织分解图\n工艺流程图\n事件图\n\n返回页面顶部 \n导航 \n是专为使用框架的TOGAF文件集。 要浏览周围的文件：\n\n在左旁的页面的主要内容框架，点击相关目录超链接加载TOGAF文档该部分或直接在文档中的一个篇章。 \n在一个章节中，您可以选择上一页“和”下一页的顶部和底部的页面移动到前一个或下一个章节，或者选取首页返回到欢迎页面。 \n返回页面顶部 \n 下载 \nTOGAF®，公开组标准，可从TOGAF信息网站的许可下下载。 该许可证是免费的，任何组织希望使用TOGAF标准完全用于内部用途（例如，开发一个用于在该组织内的信息系统架构）。 一本书也可从公开组书店作为文件G116 （印刷版及PDF） 。\n\n版权所有©1999-2011公开组，并保留所有权利。 不进行再分配。 \nTOGAF是The Open Group在美国和其他国家的注册商标。\n<<<上一页	 家	 下一页>>>\n",
+			"file": "post/2013-04-17-ea.md",
+			"file_size": 26804,
+			"file_write_time": 130107236675369509,
+			"settings":
+			{
+				"buffer_size": 9810,
+				"line_ending": "Windows",
+				"name": "#企业架构"
+			}
+		},
+		{
+			"file": "post/index.json",
+			"settings":
+			{
+				"buffer_size": 2035,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -212,7 +256,9 @@
 	},
 	"file_history":
 	[
+		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2013-04-17-pptplex.md",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/index.json",
+		"/D/01东软项目/08在案项目/06浙江/01业务设计/看板管理.txt",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/index.html",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/css/skin.css",
 		"/F/PHPnow-1.5.6/htdocs/dizhou/post/2013-02-14-android-git.md",
@@ -423,7 +469,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -431,15 +477,15 @@
 					"file": "js/blog.js",
 					"settings":
 					{
-						"buffer_size": 12002,
+						"buffer_size": 12011,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3932,
-								3932
+								3698,
+								3698
 							]
 						],
 						"settings":
@@ -450,7 +496,119 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2160.0,
+						"translation.y": 2700.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"settings":
+					{
+						"buffer_size": 13,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13,
+								13
+							]
+						],
+						"settings":
+						{
+							"auto_name": "ubuntu设置ip地址",
+							"default_dir": "F:\\PHPnow-1.5.6\\htdocs\\dizhou\\post",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/D/01东软项目/08在案项目/06浙江/01业务设计/统计分析.txt",
+					"settings":
+					{
+						"buffer_size": 2897,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								607,
+								607
+							]
+						],
+						"settings":
+						{
+							"auto_name": "负责多维度分析统计全省业务运行情况，为业务决策提供原始依据	2、以统计视角分析成本、服务、绩效；成本",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2060.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "post/2013-04-17-ea.md",
+					"settings":
+					{
+						"buffer_size": 9810,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								88,
+								88
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#企业架构",
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "post/index.json",
+					"settings":
+					{
+						"buffer_size": 2035,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								195,
+								195
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

@@ -7,6 +7,7 @@
         {"name": "other", "text":"其它"}
     ],
     "articles":[
+		{"title": "JSBlog博客程序", "file": "2013-10-19-jsblog", "cate":"tech"},
 		{"title": "树莓派--vpn服务器与http代理服务器", "file": "2013-08-14-rpi-vpn", "cate":"tech"},
         {"title": "PPT Plex", "file": "2013-04-17-pptplex", "cate":"tech"},
         {"title": "企业架构", "file": "2013-04-17-ea", "cate":"tech"},

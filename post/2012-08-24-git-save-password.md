@@ -1,4 +1,4 @@
-##windows7 配置如下：
+#windows7 配置如下：
 
 创建_netrc文件，内容为
 
